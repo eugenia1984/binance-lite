@@ -27,7 +27,7 @@ const LoginForm = () => {
           </Typography>
           <Box sx={ LOGIN_STYLES.btnContainer }>
             <PrimaryButton
-              text="Regístrate con correo o telefono"
+              text="Regístrate "
               ariaLabelText=""
               variant="contained"
               color="primary"

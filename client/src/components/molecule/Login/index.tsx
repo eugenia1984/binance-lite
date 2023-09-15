@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from 'react-router-dom'
-import { TextField, Typography, Container, Alert, AlertTitle, } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { Alert, AlertTitle, Container, TextField, Typography } from '@mui/material'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
-import { LOGIN_STYLES } from '../../template/login-form/LoginFormStyles'
 import { loginStyle } from './loginStyle'
 import { URL_LOGIN, emailRegex } from '../../../utils/constants'
 import useAuth from '../../../hooks/useAuth'
+import toast, { Toaster } from 'react-hot-toast'
 
 const LoginScreen: React.FC = () => {
-  const auth = useAuth() // Usar el hook useAuth para obtener el contexto
+  const auth = useAuth()
   const { login } = auth
   const navigate = useNavigate()
+
   const [userOrEmail, setUserOrEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [showPasswordInput, setShowPasswordInput] = useState<boolean>(false)
@@ -19,6 +20,7 @@ const LoginScreen: React.FC = () => {
   const [message, setMessage] = useState({ text: "", msg: "" })
   const [welcomeMessage, setWelcomeMessage] = useState({ text: "" })
   const [showMessage, setShowMessage] = useState<boolean>(false)
+
   const isValidEmail = emailRegex.test(userOrEmail)
 
   const handleNextClick = () => {
@@ -62,15 +64,40 @@ const LoginScreen: React.FC = () => {
 
     try {
       const { data } = await axios.post(URL_LOGIN, { userOrEmail, password })
-      login(data.data) // Store the token in the localStorage
-      navigate("/market")
+  
+      // Store the token in the localStorage
+      login(data.data) 
+
+      // If is an invalid login shows the alert
+      if (data.status === 'true' && data.message === 'Credenciales invalidas') {
+        toast.error('Error al loguearte')
+        return
+      }
+
+      // If it's login ok redirect to market
+      if (data.status === 'true' && data.message === 'Login Correcto') {
+        navigate("/market")
+      }
     } catch (error) {
-      console.log("Error en el inicio de sesión", error)
+      toast.error(`Error al loguearte: ${error}`)
     }
   }
 
   return (
     <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
+        <Toaster
+          position="top-center"
+          toastOptions={ {
+            duration: 5000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+              fontSize: '14px',
+              letterSpacing: '1px',
+              fontWeight: '700'
+            },
+          } }
+        />
       <Typography
         variant="h2"
         align="left"
@@ -80,13 +107,13 @@ const LoginScreen: React.FC = () => {
         Iniciar sesión
       </Typography>
       <TextField
-        label="Correo electrónico / Número de teléfono"
+        label="Correo electrónico"
         variant="outlined"
         fullWidth
         margin="normal"
         value={ userOrEmail }
         onChange={ (e) => setUserOrEmail(e.target.value) }
-        style={ { marginBottom: "20px" } }
+        sx={ { marginBottom: "20px", borderRadius: '12px' } }
       />
       { error &&
         <Alert severity="error">
@@ -118,6 +145,13 @@ const LoginScreen: React.FC = () => {
         onClick={ showPasswordInput ? handleLoginClick : handleNextClick }
         style={ { marginBottom: "20px" } }
       />
+      <Typography
+        variant="h4"
+        align="center"
+        my={ 2 }
+      >
+        ¿Aún no tenés una cuenta?
+      </Typography>
       <PrimaryButton
         text='Crear cuenta en Binance'
         ariaLabelText='Crear cuenta en Binance'

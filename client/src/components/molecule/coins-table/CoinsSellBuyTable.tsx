@@ -145,7 +145,9 @@ const CoinsSellBuyTable: React.FC<CoinsSellBuyTablProps> = ({
                         <TableBody>
                             { visibleRows.length === 0 &&
                                 <TableRow sx={ COINS_SELL_BUY_TABLE_STYLES.noCoinsToShowMsg }>
-                                    Sin monedas a mostrar
+                                    <TableCell component="th" id="sin-monedas">
+                                        Sin monedas a mostrar
+                                    </TableCell>
                                 </TableRow>
                             }
                             { visibleRows.length > 0 &&

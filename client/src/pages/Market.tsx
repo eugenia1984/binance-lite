@@ -3,13 +3,22 @@ import { Grid } from '@mui/material'
 import TabsMarket from '../components/molecule/tabs/TabsMarket'
 import HeroMarket from '../components/template/hero-market/HeroMarket'
 
-const Market: React.FC= () => {
+const Market: React.FC = () => {
   return (
     <main style={ { margin: '1rem auto' } }>
       <Grid
         container
         maxWidth="lg"
-        sx={ { margin: '0 auto', width: '100%', padding: '12px' } }
+        sx={ {
+          margin: '0 auto',
+          width: '100%',
+          padding: '12px',
+          flexDirection: {
+            xs: 'column',
+            sm: 'row'
+          },
+          alignItems: 'center'
+        } }
       >
         <HeroMarket />
       </Grid>

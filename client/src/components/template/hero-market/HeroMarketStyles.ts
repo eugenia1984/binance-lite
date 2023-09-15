@@ -5,7 +5,7 @@ export const HERO_MARKET_STYLES = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignContent: 'center',
+    alignContent: 'space-around',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -15,7 +15,14 @@ export const HERO_MARKET_STYLES = {
     height: '160px',
     borderRadius: '7px',
     border: '1px solid #b0abab',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08), 0 0 30px rgba(0, 0, 0, 0.06), 0 0 40px rgba(0, 0, 0, 0.04)'
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08), 0 0 30px rgba(0, 0, 0, 0.06), 0 0 40px rgba(0, 0, 0, 0.04)',
+    maxWidth: '480px'
+  },
+  saldoEmail: {
+    fontSize: '18px',
+    fontWeight: '600',
+    textAlign: 'center',
+    margin: '12px auto'
   },
   saldoText: {
     display: 'flex',

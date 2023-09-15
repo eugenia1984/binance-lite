@@ -1,26 +1,16 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { InputBase, Paper, IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
+import { useApiContext } from '../../../context/FetchContext'
 
-const SearchBar = ({onSearch}) => {
+const SearchBar = ({ onSearch }) => {
+  const { coinsData } = useApiContext()
   const [searchCoin, setSearchCoin] = useState('')
 
   const handleSearch = () => {
-    // Hacer la solicitud a la API usando fetch o axios aquí
-    fetch(`https://binance-production.up.railway.app/api/v1/cryptocurrencies?search=${searchTerm}`)
-      .then((response) => response.json())
-      .then((data) => {
-        // Llamar a la función de búsqueda con los datos recibidos de la API
-        onSearch(data);
-      })
-      .catch((error) => {
-        console.error('Error al buscar moneda:', error);
-      });
+    const coinFilter = coinsData.filter(coin => coin.name.toLowerCase().includes(searchCoin))
+    onSearch(coinFilter)
   }
-
-  const handleChange = (event) => {
-    setSearchCoin(event.target.value);
-  };
 
   return (
     <Paper
@@ -34,16 +24,20 @@ const SearchBar = ({onSearch}) => {
         marginBottom: '30px',
       } }
     >
-      <IconButton sx={ { p: '10px' } } aria-label="search" onClick={handleSearch}>
-        <SearchIcon />
-      </IconButton>
       <InputBase
         sx={ { ml: 1, flex: 1 } }
-        placeholder="Buscar..."
-        inputProps={ { 'aria-label': 'search' } }
-        value={searchCoin}
-        onChange={handleChange}
+        placeholder="Ingresar moneda a comprar..."
+        inputProps={ { 'aria-label': 'Ingresar moneda a comprar' } }
+        value={ searchCoin }
+        onChange={ (event) => setSearchCoin(event.target.value) }
       />
+      <IconButton
+        sx={ { p: '10px' } }
+        aria-label="Buscar moneda a comprar"
+        onClick={ handleSearch }
+      >
+        <SearchIcon />
+      </IconButton>
     </Paper>
   )
 }

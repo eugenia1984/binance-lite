@@ -12,6 +12,7 @@ import 'swiper/css/navigation'
 import "./styleSlider.css"
 import { Autoplay, Mousewheel, Pagination, Navigation, EffectCoverflow } from 'swiper/modules'
 import { useNavigate } from 'react-router-dom'
+import { formatNumberToCurrency } from '../../../utils/strings'
 
 export const SlideNextButton = () => {
     const swiper = useSwiper()
@@ -83,12 +84,9 @@ const SliderCupones: React.FC = () => {
         >
             { coinsData.slice(0, 5).map((coin) => (
                 <SwiperSlide key={ coin.uuid }>
-                    <Box>
+                    <Box sx={ { maxWidth: '100%' } }>
                         <Card sx={ CARDS_STYLES.card } >
-                            <Grid
-                                container
-                                sx={ CARDS_STYLES.gridContainer }
-                            >
+                            <Grid container sx={ CARDS_STYLES.gridContainer }>
                                 <Grid
                                     item
                                     xs={ 6 }
@@ -112,11 +110,11 @@ const SliderCupones: React.FC = () => {
                                 </Grid>
                                 <Grid item xs={ 6 } sx={ CARDS_STYLES.gridItem }>
                                     <Typography variant="h4" color="initial">
-                                        { coin.currentPrice.substring(0, 6) }
+                                        { formatNumberToCurrency(coin.currentPrice) }
                                     </Typography>
                                     <CardActions sx={ { width: 100 } } >
                                         <Button
-                                            onClick={ () => navigate(`/buy?coin=${ coin.uuid }`) }
+                                            onClick={ () => navigate(`/buy/screen?coin=${ coin.uuid }`) }
                                             variant='contained'
                                             size='small'
                                             aria-label="comprar"

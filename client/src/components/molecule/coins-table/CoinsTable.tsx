@@ -6,6 +6,7 @@ import { CoinData } from '../../../models/CoinDataResponse'
 import { useApiContext } from '../../../context/FetchContext'
 import { COINS_TABLE_STYLES } from './CoinsTableStyles'
 import BuyCoinModal from '../modals/BuyCoinModal'
+import { formatNumberToCurrency } from '../../../utils/strings'
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
     if (b[orderBy] < a[orderBy]) return -1
@@ -124,18 +125,6 @@ export default function CoinsTable() {
     };
 
     const visibleRows: any[] = useMemo(() => stableSort(coinsData, getComparator(order, orderBy)), [order, orderBy, coinsData])
-
-    function formatNumberToCurrency(input: string): string {
-        const num = parseFloat(input)
-        if (isNaN(num)) return "Invalid input"
-
-        if (num >= 1000000) {
-            const millions = (num / 1000000).toFixed(2)
-            return `${ millions } M$`
-        } else {
-            return `${ num.toFixed(2) } $`
-        }
-    }
 
     return (
         <Box sx={ { width: '100%' } }>

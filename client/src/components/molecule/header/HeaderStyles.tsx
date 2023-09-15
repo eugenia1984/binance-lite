@@ -6,16 +6,7 @@ export const HEADER_STYLES = {
     padding: '0.5rem 0.75rem',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  linkLogo: {
-    textDecoration: 'none',
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
   },
   logo: {
     textTransform: 'uppercase',
@@ -45,5 +36,14 @@ export const HEADER_STYLES = {
       xs: 'none',
       sm: 'flex'
     },
+  },
+  linkLogo: {
+    textDecoration: 'none',
+    display: 'flex',
+    alignContent: 'center',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
   }
 }

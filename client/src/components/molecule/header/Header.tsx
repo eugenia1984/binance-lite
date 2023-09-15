@@ -23,7 +23,19 @@ const Header: React.FC = () => {
           !token ?
             <>
               <Grid item xs={ 6 } sm={ 3 } sx={ HEADER_STYLES.containerLogo } >
-                <Link to="/" aria-label="ir a login o registrarse" style={ HEADER_STYLES.linkLogo } >
+                <Link
+                  to="/"
+                  aria-label="ir a login o registrarse"
+                  style={ {
+                    textDecoration: 'none',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    alignContent: 'center',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  } }
+                >
                   <img width="40" height="40" src="/binance-64.png" alt="Binance cryptocurrency logo" />
                   <Box component="span" sx={ HEADER_STYLES.logo }> Binance</Box>
                 </Link>

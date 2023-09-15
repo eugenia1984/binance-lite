@@ -17,19 +17,15 @@ Entendemos que el mundo del trading puede resultar complicado y abrumador para a
 ## <img width="30" height="30" src="https://img.icons8.com/doodle/30/crowd.png" alt="crowd"/> INTEGRANTES
 
 
-| <img width="20" height="20" src="https://img.icons8.com/dusk/20/web.png" alt="web"/> FrontEnd |
-| ------- |
-| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Eduardo Arevalo](https://github.com/Edu568) |
-| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Victor Fernandez](https://github.com/vic-ferr) |
-|  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Maria Eugenia Costa](https://github.com/eugenia1984) |
-|  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Sergio Calbino](https://github.com/SergioCalbino) |
+| <img width="20" height="20" src="https://img.icons8.com/dusk/20/web.png" alt="web"/> FrontEnd  | <img width="20" height="20" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/20/external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry.png" alt="external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry"/> BackEnd |
+| ----- | ---- |
+| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Eduardo Arevalo](https://github.com/Edu568) |  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/>  Nilo Ivan Soruco Guerrero](https://github.com/nilovili) |
+| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Victor Fernandez](https://github.com/vic-ferr) | [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Miguel Miche](https://github.com/migmm) |
+|  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Maria Eugenia Costa](https://github.com/eugenia1984) | - |
+|  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Sergio Calbino](https://github.com/SergioCalbino) | - |
 
 
 
-| <img width="20" height="20" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/20/external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry.png" alt="external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry"/> BackEnd |
-| ----- |
-| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/>  Nilo Ivan Soruco Guerrero](https://github.com/nilovili) |
-| [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Miguel Miche](https://github.com/migmm) |
 
 
 | <img width="20" height="20" src="https://img.icons8.com/dotty/20/web.png" alt="web"/> UX/UI |
@@ -45,46 +41,20 @@ Entendemos que el mundo del trading puede resultar complicado y abrumador para a
 
 | FrontEnd |
 | ------- |
-|  <img width="20" height="20" src="https://img.icons8.com/color/20/html-5--v1.png" alt="html-5"/> HTML5 | 
-| <img width="20" height="20" src="https://img.icons8.com/color/20/css3.png" alt="css3"/> CSS3 |
-| <img width="20" height="20" src="https://img.icons8.com/office/20/react.png" alt="react"/> [React](https://react.dev/) |
-| <img width="20" height="20" src="https://img.icons8.com/fluency/20/typescript--v1.png" alt="typescript--v1"/> [Typescript](https://www.typescriptlang.org/) |
-| <img width="20" height="20" src="https://img.icons8.com/color/20/material-ui.png" alt="material-ui"/> [MUI](https://mui.com/), Material UI icons | 
+|  <img width="20" height="20" src="https://img.icons8.com/color/20/html-5--v1.png" alt="html-5"/> HTML5 - <img width="20" height="20" src="https://img.icons8.com/color/20/css3.png" alt="css3"/> CSS3 - <img width="20" height="20" src="https://img.icons8.com/office/20/react.png" alt="react"/> [React](https://react.dev/) - <img width="20" height="20" src="https://img.icons8.com/fluency/20/typescript--v1.png" alt="typescript--v1"/> [Typescript](https://www.typescriptlang.org/) -  <img width="20" height="20" src="https://img.icons8.com/color/20/material-ui.png" alt="material-ui"/> [MUI](https://mui.com/), Material UI icons | 
 
 
 | Dependencias |
 | ------------ |
-| [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-dom](https://www.npmjs.com/package/react-dom) |
-| [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-router-dom](https://www.npmjs.com/package/react-router-dom) |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> firebase](https://firebase.google.com/) |
-| [swiperjs](https://swiperjs.com/)  |
-| [axios](https://axios-http.com/) |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/redux.png" alt="redux"/> redux](https://redux.js.org/) y [<img width="20" height="20" src="https://img.icons8.com/color/20/redux.png" alt="redux"/> toolkit](https://redux-toolkit.js.org/) |
+| [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-dom](https://www.npmjs.com/package/react-dom) - [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-router-dom](https://www.npmjs.com/package/react-router-dom) - [<img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> firebase](https://firebase.google.com/) - [swiperjs](https://swiperjs.com/)  - [axios](https://axios-http.com/)  |
 
 | BackEnd |
 | ------- |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/nodejs.png" alt="nodejs"/> NodeJS](https://nodejs.org/en) |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/nestjs.png" alt="nestjs"/> NestsJS](https://nestjs.com/) |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/postgreesql.png" alt="postgreesql"/> Postgresql](https://www.postgresql.org/) |
-| [<img width="20" height="20" src="https://user-images.githubusercontent.com/30929568/112730670-de09a480-8f58-11eb-9875-0d9ebb87fbd6.png" alt="postgreesql"/> TypeORM](https://typeorm.io) |
+| [<img width="20" height="20" src="https://img.icons8.com/color/20/nodejs.png" alt="nodejs"/> NodeJS](https://nodejs.org/en) -  [<img width="20" height="20" src="https://img.icons8.com/color/20/nestjs.png" alt="nestjs"/> NestsJS](https://nestjs.com/) -  [<img width="20" height="20" src="https://img.icons8.com/color/20/postgreesql.png" alt="postgreesql"/> Postgresql](https://www.postgresql.org/) -  [<img width="20" height="20" src="https://user-images.githubusercontent.com/30929568/112730670-de09a480-8f58-11eb-9875-0d9ebb87fbd6.png" alt="postgreesql"/> TypeORM](https://typeorm.io) |
 
 | Dependencias |
 | ------------ |
-| [<img width="20" height="20" src="https://img.icons8.com/fluency/20/typescript--v1.png" alt="typescript--v1"/> Typescript](https://www.typescriptlang.org/) |
-| [jest](https://jestjs.io/) |
-| [supertest](https://www.npmjs.com/package/supertest) |
-| [prettier](https://prettier.io/) |
-| [<img width="20" height="20" src="https://img.icons8.com/color/20/eslint.png" alt="eslint"/> ESLint](https://eslint.org/)   |
-| testing |
-| [schematics](https://www.smartdraw.com/circuit-diagram/schematic-diagram-software.htm?id=66431) |
-| cli |
-| [bcrypt](https://www.npmjs.com/package/bcrypt) |
-| class-transformer y class-validator |
-| [joi](https://joi.dev/) |
-|  pg |
-|  [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) |
-|  [rxjs](https://rxjs.dev/) |
-|  [<img width="20" height="20" src="https://img.icons8.com/color/20/cloud-function.png" alt="cloud-function"/> swagger](https://swagger.io/) |
+| [<img width="20" height="20" src="https://img.icons8.com/fluency/20/typescript--v1.png" alt="typescript--v1"/> Typescript](https://www.typescriptlang.org/) -  [jest](https://jestjs.io/) -  [supertest](https://www.npmjs.com/package/supertest) -  [prettier](https://prettier.io/) -  [<img width="20" height="20" src="https://img.icons8.com/color/20/eslint.png" alt="eslint"/> ESLint](https://eslint.org/)  -  testing - [schematics](https://www.smartdraw.com/circuit-diagram/schematic-diagram-software.htm?id=66431) -  cli -  [bcrypt](https://www.npmjs.com/package/bcrypt) -  class-transformer y class-validator -  [joi](https://joi.dev/) -   pg -   [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) -   [rxjs](https://rxjs.dev/) -   [<img width="20" height="20" src="https://img.icons8.com/color/20/cloud-function.png" alt="cloud-function"/> swagger](https://swagger.io/) |
 
 | UX/UI |
 | ----- |

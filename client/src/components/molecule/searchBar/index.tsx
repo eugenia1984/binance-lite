@@ -2,14 +2,18 @@ import { useState } from 'react'
 import { InputBase, Paper, IconButton } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { useApiContext } from '../../../context/FetchContext'
+import { useLoader } from '../../../context/LoaderProvider'
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar= ({ onSearch }) => {
+  const { addLoading, removeLoading } = useLoader()
   const { coinsData } = useApiContext()
   const [searchCoin, setSearchCoin] = useState('')
 
   const handleSearch = () => {
+    addLoading()
     const coinFilter = coinsData.filter(coin => coin.name.toLowerCase().includes(searchCoin))
     onSearch(coinFilter)
+    removeLoading()
   }
 
   return (

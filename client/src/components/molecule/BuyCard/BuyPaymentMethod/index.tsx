@@ -1,34 +1,67 @@
-import React, { useState } from "react"
-import { Radio, RadioGroup, FormControlLabel, FormControl, Button, Container, Typography } from "@mui/material"
-import { loginStyle } from "../../Login/loginStyle"
-import { useLocation, useNavigate } from "react-router-dom"
+import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { Button, Container, Divider, FormControlLabel, FormControl, Radio, RadioGroup, Typography } from '@mui/material'
+import { loginStyle } from '../../Login/loginStyle'
+import { useApiContext } from '../../../../context/FetchContext'
+import { formatCurrencyToTwoDecimals, getAmountToPaid } from '../../../../utils/strings'
+import toast, { Toaster } from 'react-hot-toast'
+import { toastStyleBgRed } from '../../../../utils/styles'
 
-const BuyPaymentMethod = () => {
+const BuyPaymentMethod: React.FC = () => {
+  const { coinsData } = useApiContext()
   const location = useLocation()
-  const moneda = new URLSearchParams(location.search).get("moneda")
   const navigate = useNavigate()
   const [method, setMethod] = useState("")
 
+  const moneda = new URLSearchParams(location.search).get("coin")
+  const cantidad = new URLSearchParams(location.search).get("amount")
+  const coinToShow = coinsData.filter(coin => coin.uuid === moneda)
+
   const handleMethodChange = (event) => setMethod(event.target.value)
 
-  const handleClick = () => navigate("/agregar-tarjeta")
+  const handleClick = () => {
+    if (!method) toast.error('Debe seleccionar un método de pago')
+    if (method) navigate(`/agregar-tarjeta?coin=${ moneda }&&amount=${ cantidad }`)
+  }
 
   return (
     <Container maxWidth="xs" sx={ { minHeight: "82vh" } }>
+      <Toaster
+        position="top-center"
+        toastOptions={ {
+          duration: 5000,
+          style: toastStyleBgRed,
+        } }
+      />
       <Typography
         variant="h2"
         align="center"
         gutterBottom
         sx={ loginStyle.typography }
-        style={ { marginBottom: "50px" } }
       >
-        Seleccionar metodo de cobro para comprar
+        Seleccionar metodo de cobro para comprar { coinToShow[0]?.name }
       </Typography>
-      <Typography variant="h1" align="center" marginBottom="20px">
-        { moneda } unidades
-      </Typography>
+      { coinToShow.length > 0 &&
+        <>
+          <Divider sx={ { margin: '12px auto' } } />
+          <Typography gutterBottom ml={ 2 } >
+            { cantidad } unidades de { coinToShow[0]?.name } <img src={ coinToShow[0]?.iconUrl } width="20" height="20" />
+          </Typography>
+          <Typography gutterBottom ml={ 2 } >
+            $ { formatCurrencyToTwoDecimals(coinToShow[0]?.currentPrice) } precio actual por unidad
+          </Typography>
+          <Typography gutterBottom ml={ 2 } >
+            $ 500 de comisión
+          </Typography>
+          <Divider sx={ { margin: '12px auto' } } />
+          <Typography gutterBottom ml={ 2 } >
+            $ { +getAmountToPaid(coinToShow[0]?.currentPrice, cantidad, '500') } total a abonar
+          </Typography>
+          <Divider sx={ { margin: '12px auto' } } />
+        </>
+      }
       <FormControl component="fieldset">
-        <Typography variant="h3" align="center" marginBottom="20px">
+        <Typography variant="h3" align="center" my={ 3 }>
           Método de Pago:
         </Typography>
         <RadioGroup
@@ -49,7 +82,12 @@ const BuyPaymentMethod = () => {
           />
         </RadioGroup>
       </FormControl>
-      <Button variant="contained" color="primary" onClick={ handleClick } sx={ { marginTop: '24px' } }>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={ handleClick }
+        sx={ { marginTop: '24px' } }
+      >
         Confirmar Método de Pago
       </Button>
     </Container>

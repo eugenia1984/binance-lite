@@ -15,7 +15,8 @@ export const loginStyle = {
     },
     typography: {
         marginTop: '55px',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        textAlign: 'left'
     },
     btnCreateAccount: {
         backgroundColor: '#fff',

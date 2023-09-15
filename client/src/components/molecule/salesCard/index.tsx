@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import TextField from '@mui/material/TextField';
-import { loginStyle } from '../Login/loginStyle';
-import PrimaryButton from '../../atom/buttons/PrimaryButton';
+import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import TextField from '@mui/material/TextField'
+import { loginStyle } from '../Login/loginStyle'
+import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import {Container, Typography} from "@mui/material"
-import { useApiContext } from '../../../context/FetchContext';
-
-
-
+import { useApiContext } from '../../../context/FetchContext'
 
 const NumericInput = () => {
-
   const { coinsData } = useApiContext()
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
+
   const navigate = useNavigate()
   const location = useLocation()
-  const urlSearch = location.search
-  const idCoin = urlSearch.split('=')[1]
+
+  const idCoin = new URLSearchParams(location.search).get("coin")
 
   const coinToShow = coinsData.filter(coin => coin.uuid === idCoin)
 
   const handleInputChange = (e) =>  setInputValue(e.target.value)
 
-const handleClick = () => {
-    navigate(`/paymentmethod?moneda=${inputValue}`)
-}
-  
-
+  const handleClick = () =>   navigate(`/paymentmethod?moneda=${inputValue}`)
   
   return (
     <Container maxWidth="xs" sx={{minHeight: '82vh'}}>
@@ -48,19 +41,19 @@ const handleClick = () => {
         value={inputValue}
         onChange={handleInputChange}
         fullWidth
-        style={{marginBottom:"20px", marginTop:"10px", marginRight:"15px",}}
+        sx={{marginBottom:"20px", marginTop:"10px", marginRight:"15px",}}
       />
       <PrimaryButton 
         ariaLabelText='Confirmar'
         text='Confirmar' 
         onClick={handleClick} 
-        style={{marginBottom:"40px"}}
+        sx={{marginBottom:"40px"}}
       />
     </Container>
-  );
-};
+  )
+}
 
-export default NumericInput;
+export default NumericInput
 
 
 

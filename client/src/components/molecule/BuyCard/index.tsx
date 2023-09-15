@@ -5,36 +5,42 @@ import { loginStyle } from '../Login/loginStyle'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { Container, Typography } from "@mui/material"
 import { useApiContext } from '../../../context/FetchContext'
+import toast, { Toaster } from 'react-hot-toast'
+import { toastStyleBgRed } from '../../../utils/styles'
 
 const MontoInput = () => {
-  const [inputValue, setInputValue] = useState("")
-  const location = useLocation()
-  const urlSearch = location.search
-  const idCoin = urlSearch.split('=')[1]
-  const navigate = useNavigate()
   const { coinsData } = useApiContext()
-  
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const [inputValue, setInputValue] = useState("")
+
+  const idCoin = new URLSearchParams(location.search).get("coin")
+
   const coinToShow = coinsData.filter(coin => coin.uuid === idCoin)
 
   const handleInputChange = (e) => setInputValue(e.target.value)
 
-  const handleClick = () => navigate(`/buypaymentmethod?moneda=${ inputValue }`)
+  const handleClick = () => {
+    if(!inputValue) toast.error('Debes ingresar la cantidad')
+    if (inputValue) navigate(`/buypaymentmethod?coin=${ idCoin }&&amount=${ inputValue }`)
+  }
 
   return (
     <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
-      <Typography
-        variant='h2'
-        align='left'
-        gutterBottom
-        sx={ loginStyle.typography }
-      >
-        Comprar { coinToShow[0]?.name  }
+      <Toaster
+          position="top-center"
+          toastOptions={ { duration: 5000, style: toastStyleBgRed} }
+        />
+      <Typography variant='h2' sx={ loginStyle.typography }>
+        Comprar
       </Typography>
-      <Typography
-        variant='h3'
-        style={ { marginTop: "20px" } }
-      >
-        Quiero Comprar
+      <Typography variant='h3' sx={ { marginTop: "10px" } }>
+        Quiero comprar { coinToShow.length > 0 &&
+          <>
+            <span>{ coinToShow[0]?.name } </span> <img src={ coinToShow[0]?.iconUrl } width="32" height="32" />
+          </>
+        }
       </Typography>
       <TextField
         type="number"
@@ -43,12 +49,12 @@ const MontoInput = () => {
         value={ inputValue }
         onChange={ handleInputChange }
         fullWidth
-        style={ { marginBottom: "20px", marginTop: "10px", marginRight: "15px", } }
+        sx={ { margin: "20px auto 30px" } }
       />
       <PrimaryButton
-        text='confirmar'
+        text='Confirmar'
         onClick={ handleClick }
-        style={ { marginBottom: "40px" } }
+        sx={ { marginBottom: "40px" } }
         ariaLabelText="Confirmar"
       />
     </Container>

@@ -7,6 +7,7 @@ import { loginStyle } from './loginStyle'
 import { URL_LOGIN, emailRegex } from '../../../utils/constants'
 import useAuth from '../../../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast'
+import { toastStyleBgRed } from '../../../utils/styles'
 
 const LoginScreen: React.FC = () => {
   const auth = useAuth()
@@ -88,14 +89,8 @@ const LoginScreen: React.FC = () => {
         <Toaster
           position="top-center"
           toastOptions={ {
-            duration: 5000,
-            style: {
-              background: '#363636',
-              color: '#fff',
-              fontSize: '14px',
-              letterSpacing: '1px',
-              fontWeight: '700'
-            },
+            duration: 6000,
+            style: toastStyleBgRed,
           } }
         />
       <Typography

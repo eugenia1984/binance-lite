@@ -1,4 +1,4 @@
-export const PERSONAL_STYLES = {
+export const ADD_CARDS_STYLES = {
   main: {
     minHeight: '80vh',
     display: 'flex',
@@ -35,15 +35,7 @@ export const PERSONAL_STYLES = {
     textDecoration: 'none',
     marginBottom: '250px'
   },
-  inputEmailPhone: {
-    width: "100%",
-    marginBottom: "20px"
-  },
-  inputPassword: {
-    width: "100%",
-    marginBottom: "20px"
-  },
-  textFiled: {
+  textField: {
     width: "100%",
     marginBottom: "20px"
   }

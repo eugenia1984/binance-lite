@@ -23,7 +23,11 @@ const MontoInput = () => {
 
   const handleClick = () => {
     if(!inputValue) toast.error('Debes ingresar la cantidad')
-    if (inputValue) navigate(`/buypaymentmethod?coin=${ idCoin }&&amount=${ inputValue }`)
+    if (inputValue) {
+      localStorage.setItem('coinToBuy', idCoin)
+      localStorage.setItem('amountToBuy', inputValue )
+      navigate('/buypaymentmethod')
+    }
   }
 
   return (

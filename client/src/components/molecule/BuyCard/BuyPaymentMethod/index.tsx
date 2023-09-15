@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button, Container, Divider, FormControlLabel, FormControl, Radio, RadioGroup, Typography } from '@mui/material'
 import { loginStyle } from '../../Login/loginStyle'
 import { useApiContext } from '../../../../context/FetchContext'
@@ -9,19 +9,18 @@ import { toastStyleBgRed } from '../../../../utils/styles'
 
 const BuyPaymentMethod: React.FC = () => {
   const { coinsData } = useApiContext()
-  const location = useLocation()
   const navigate = useNavigate()
-  const [method, setMethod] = useState("")
+  const [method, setMethod] = useState<string>("")
 
-  const moneda = new URLSearchParams(location.search).get("coin")
-  const cantidad = new URLSearchParams(location.search).get("amount")
+  const moneda = localStorage.getItem('coinToBuy')
+  const cantidad = localStorage.getItem('amountToBuy')
   const coinToShow = coinsData.filter(coin => coin.uuid === moneda)
 
   const handleMethodChange = (event) => setMethod(event.target.value)
 
   const handleClick = () => {
     if (!method) toast.error('Debe seleccionar un método de pago')
-    if (method) navigate(`/agregar-tarjeta?coin=${ moneda }&&amount=${ cantidad }`)
+    if (method) navigate('/agregar-tarjeta')
   }
 
   return (

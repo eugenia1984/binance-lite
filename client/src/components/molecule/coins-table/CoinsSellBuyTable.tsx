@@ -1,0 +1,212 @@
+import React, { useMemo, useState } from 'react'
+import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableSortLabel } from '@mui/material'
+import { visuallyHidden } from '@mui/utils'
+import { Order } from '../../../utils/types'
+import { CoinData } from '../../../models/CoinDataResponse'
+import { COINS_TABLE_STYLES } from './CoinsTableStyles'
+import { COINS_SELL_BUY_TABLE_STYLES } from './CoinsSellBuyTableStyles'
+import BuySellCoinModal from '../modals/BuySellCoinModal'
+
+function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
+    if (b[orderBy] < a[orderBy]) return -1
+    if (b[orderBy] > a[orderBy]) return 1
+    return 0
+}
+
+function getComparator<Key extends keyof any>(
+    order: Order,
+    orderBy: Key,
+): (
+    a: { [key in Key]: number | string },
+    b: { [key in Key]: number | string },
+) => number {
+    return order === 'desc'
+        ? (a, b) => descendingComparator(a, b, orderBy)
+        : (a, b) => -descendingComparator(a, b, orderBy)
+}
+
+function stableSort<T>(array: readonly T[], comparator: (a: T, b: T) => number) {
+    const stabilizedThis = array.map((el, index) => [el, index] as [T, number]);
+    stabilizedThis.sort((a, b) => {
+        const order = comparator(a[0], b[0])
+        if (order !== 0) return order
+
+        return a[1] - b[1]
+    })
+    return stabilizedThis.map((el) => el[0])
+}
+
+interface HeadCell {
+    id: keyof CoinData
+    label: string
+    showSmall: boolean
+}
+
+const headCells: readonly HeadCell[] = [
+    { id: 'name', label: 'Criptomoneda', showSmall: true },
+    { id: 'currentPrice', label: 'Último precio', showSmall: true }
+]
+
+interface CoinsTableProps {
+    onRequestSort: (event: React.MouseEvent<unknown>, property: keyof CoinData) => void
+    order: Order
+    orderBy: string
+}
+
+function CoinsTableHead(props: CoinsTableProps) {
+    const { order, orderBy, onRequestSort } = props
+    const createSortHandler = (property: keyof CoinData) => (event: React.MouseEvent<unknown>) => onRequestSort(event, property)
+
+    return (
+        <TableHead>
+            <TableRow sx={ COINS_TABLE_STYLES.tableRow }>
+                { headCells.map((headCell) => (
+                    <TableCell
+                        key={ headCell.id }
+                        align='left'
+                        padding='normal'
+                        sortDirection={ orderBy === headCell.id ? order : false }
+                        sx={ {
+                            display: {
+                                xs: `${ headCell.showSmall ? 'inline-block' : 'none' }`,
+                                sm: 'flex'
+                            },
+                            maxWidth: '130px'
+                        } }
+                    >
+                        <TableSortLabel
+                            active={ orderBy === headCell.id }
+                            direction={ orderBy === headCell.id ? order : 'asc' }
+                            onClick={ createSortHandler(headCell.id) }
+                        >
+                            { headCell.label }
+                            { orderBy === headCell.id ? (
+                                <Box component="span" sx={ visuallyHidden }>
+                                    { order === 'desc' ? 'sorted descending' : 'sorted ascending' }
+                                </Box>
+                            ) : null }
+                        </TableSortLabel>
+                    </TableCell>
+                )) }
+            </TableRow>
+        </TableHead>
+    )
+}
+
+interface CoinsSellBuyTablProps {
+    urlPathName: string
+    btnText: string
+    coinsData: CoinData[]
+}
+
+const CoinsSellBuyTable: React.FC<CoinsSellBuyTablProps> = ({
+    urlPathName,
+    btnText,
+    coinsData
+}) => {
+    const [order, setOrder] = useState<Order>('asc')
+    const [orderBy, setOrderBy] = useState<keyof CoinData>('currentPrice')
+    const [openModal, setOpenModal] = useState(false)
+    const [cointToShow, setCoinToShow] = useState<CoinData>(null)
+
+    const handleClickOpen = () => setOpenModal(true)
+    const handleClose = () => setOpenModal(false)
+
+    const handleRequestSort = (
+        event: React.MouseEvent<unknown>,
+        property: keyof CoinData,
+    ) => {
+        const isAsc = orderBy === property && order === 'asc'
+        setOrder(isAsc ? 'desc' : 'asc')
+        setOrderBy(property)
+    }
+
+    const handleClick = (event: React.MouseEvent<unknown>, coinData: CoinData) => {
+        setCoinToShow(coinData)
+        handleClickOpen()
+    };
+
+    const visibleRows: any[] = useMemo(() => stableSort(coinsData, getComparator(order, orderBy)), [order, orderBy, coinsData])
+
+    return (
+        <Box sx={ { width: '100%' } }>
+            <Paper sx={ { width: '100%', mb: 2 } }>
+                <TableContainer>
+                    <Table
+                        sx={ COINS_SELL_BUY_TABLE_STYLES.table }
+                        aria-labelledby="tableTitle"
+                        size='medium'
+                    >
+                        <CoinsTableHead
+                            order={ order }
+                            orderBy={ orderBy }
+                            onRequestSort={ handleRequestSort }
+                        />
+                        <TableBody>
+                            { visibleRows.length === 0 &&
+                                <TableRow sx={ COINS_SELL_BUY_TABLE_STYLES.noCoinsToShowMsg }>
+                                    Sin monedas a mostrar
+                                </TableRow>
+                            }
+                            { visibleRows.length > 0 &&
+                                visibleRows.map((coinsData, index) => {
+                                    const labelId = `enhanced-table-checkbox-${ index }`
+                                    const price = +(parseFloat(coinsData.currentPrice.toString()).toFixed(2))
+
+                                    return (
+                                        <TableRow
+                                            hover
+                                            onClick={ (event) => handleClick(event, coinsData) }
+                                            role="checkbox"
+                                            tabIndex={ -1 }
+                                            key={ coinsData.name }
+                                            sx={ COINS_SELL_BUY_TABLE_STYLES.tableRow }
+                                        >
+                                            <TableCell
+                                                component="th"
+                                                id={ labelId }
+                                                scope="row"
+                                                padding="none"
+                                                sx={ COINS_SELL_BUY_TABLE_STYLES.tableCellName }
+                                            >
+                                                <Box>
+                                                    <img
+                                                        src={ coinsData.iconUrl.toString() }
+                                                        width={ 30 }
+                                                        height={ 30 }
+                                                        alt={ coinsData.name.toString() }
+                                                    />
+                                                </Box>
+                                                <Box component="div" sx={ COINS_SELL_BUY_TABLE_STYLES.containerIconName }>
+                                                    <Box component="span" sx={ COINS_SELL_BUY_TABLE_STYLES.symbol }>
+                                                        { coinsData.symbol }
+                                                    </Box>
+                                                    <Box component="span" sx={ COINS_SELL_BUY_TABLE_STYLES.name }>
+                                                        { coinsData.name }
+                                                    </Box>
+                                                </Box>
+                                            </TableCell>
+                                            <TableCell align="right" sx={ COINS_SELL_BUY_TABLE_STYLES.tableCell }>
+                                                { price }
+                                            </TableCell>
+                                        </TableRow>
+                                    );
+                                }) }
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Paper>
+            { openModal &&
+                <BuySellCoinModal
+                    handleClose={ handleClose }
+                    openModal={ openModal }
+                    cointToShow={ cointToShow }
+                    urlPathName={ urlPathName }
+                    btnModalText={ btnText }
+                />
+            }
+        </Box>
+    )
+}
+
+export default CoinsSellBuyTable

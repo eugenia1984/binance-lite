@@ -1,0 +1,63 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* Estilos para los puntos de paginación (bullets) */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #f8bc16;
+  opacity: 0.6;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+}
+
+/* Estilos para el punto de paginación activo (current) */
+.swiper-pagination-bullet-active {
+  background-color: #ff5733;
+  opacity: 1;
+}
+
+.swiper-div-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cupones {
+  text-align: right;
+}
+
+.pagos {
+  text-align: center;
+}
+
+.section {
+  background: linear-gradient(
+    to bottom,
+    #32322f,
+    #32322f,
+    #33332f,
+    #33332e,
+    #33332e,
+    #35352f,
+    #373631,
+    #393832,
+    #3d3c35,
+    #404039,
+    #44443c,
+    #484840
+  );
+}

@@ -40,5 +40,12 @@ export function getAmountToPaid(
   return add ?
     (numberCurrentPrice * numberAmount + +add).toFixed(2)
     : (numberCurrentPrice * numberAmount).toFixed(2)
+}
 
+export function getSrcImg(input: string): string | null {
+  const indexOfPng = input.lastIndexOf('.png')
+  if (indexOfPng !== -1) {
+    return input.substring(0, indexOfPng + 4) // add 4 to include ".png"
+  }
+  return null // if there is no ".png" retunr devolvemos null
 }

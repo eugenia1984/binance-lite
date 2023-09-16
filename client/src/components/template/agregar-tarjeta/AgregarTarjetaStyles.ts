@@ -9,6 +9,10 @@ export const ADD_CARDS_STYLES = {
     alignContent: 'center',
     width: '100%'
   },
+  title: { 
+    textAlign: 'center', 
+    margin: '0ps 24px 26px',  
+  },
   boxContainer: {
     width: '100%',
     display: 'flex',

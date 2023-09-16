@@ -7,9 +7,11 @@ import { loginStyle } from './loginStyle'
 import { URL_LOGIN, emailRegex } from '../../../utils/constants'
 import useAuth from '../../../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast'
-import { toastStyleBgRed } from '../../../utils/styles'
+import { toastStyleBgBlack } from '../../../utils/styles'
+import { useLoader } from '../../../context/LoaderProvider'
 
 const LoginScreen: React.FC = () => {
+  const { addLoading, removeLoading } = useLoader()
   const auth = useAuth()
   const { login } = auth
   const navigate = useNavigate()
@@ -64,10 +66,10 @@ const LoginScreen: React.FC = () => {
     }
 
     try {
+      addLoading()
       const { data } = await axios.post(URL_LOGIN, { userOrEmail, password })
-  
-      // Store the token in the localStorage
-      login(data.data) 
+      login(data.data) // Store the token in the localStorage
+      removeLoading()
 
       // If is an invalid login shows the alert
       if (data.status === 'true' && data.message === 'Credenciales invalidas') {
@@ -77,22 +79,22 @@ const LoginScreen: React.FC = () => {
 
       // If it's login ok redirect to market
       if (data.status === 'true' && data.message === 'Login Correcto') {
-        navigate("/market")
+        toast.success('Login Correcto')
+        setTimeout(() => {
+          navigate('/market')
+        }, 6000)
       }
     } catch (error) {
-      toast.error(`Error al loguearte: ${error}`)
+      toast.error(`Error al loguearte: ${ error }`)
     }
   }
 
   return (
     <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
-        <Toaster
-          position="top-center"
-          toastOptions={ {
-            duration: 6000,
-            style: toastStyleBgRed,
-          } }
-        />
+      <Toaster
+        position="top-center"
+        toastOptions={ { duration: 5000, style: toastStyleBgBlack } }
+      />
       <Typography
         variant="h2"
         align="left"

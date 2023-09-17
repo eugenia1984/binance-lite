@@ -26,7 +26,7 @@ Siempre se le informa al usuario si hay errores al completar, si ocurre algún e
 
 ## <img width="30" height="30" src="https://img.icons8.com/cotton/30/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY
 
-- Front: 
+- Front: [https://binance-l.netlify.app/](https://binance-l.netlify.app/)
 
 - Back: [https://binance-production.up.railway.app/api/v1/docs#/](https://binance-production.up.railway.app/api/v1/docs#/)
 

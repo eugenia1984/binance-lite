@@ -3,12 +3,12 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container, InputLabel, TextField, Typography } from '@mui/material'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
-import { loginStyle } from './loginStyle'
 import { URL_LOGIN, emailRegex } from '../../../utils/constants'
 import useAuth from '../../../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast'
 import { toastStyleBgBlack } from '../../../utils/styles'
 import { useLoader } from '../../../context/LoaderProvider'
+import { loginStyle } from './loginStyle'
 
 const LoginScreen: React.FC = () => {
   const { addLoading, removeLoading } = useLoader()

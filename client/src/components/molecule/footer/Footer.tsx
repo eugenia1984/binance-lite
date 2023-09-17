@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const token = localStorage.getItem('token')
 
   return (
-    <footer>
+    <footer style={FOOTER_STYLES.footer}>
       <Grid container maxWidth="lg" sx={ FOOTER_STYLES.container } >
         { token &&
           <Grid item xs={ 12 } sx={ FOOTER_STYLES.gridNavBar } >

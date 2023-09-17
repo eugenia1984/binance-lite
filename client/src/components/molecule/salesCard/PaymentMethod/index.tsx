@@ -1,17 +1,17 @@
 import { Button, Container, Typography } from '@mui/material'
-import { loginStyle } from '../../Login/loginStyle'
+import { loginStyle } from '../../login/loginStyle'
 import { useLocation, useNavigate } from 'react-router'
 
 const PaymentMethod = () => {
   const location = useLocation()
   const moneda = new URLSearchParams(location.search).get("moneda")
   const navigate = useNavigate()
- 
-  
-  
-  
-  
-  
+
+
+
+
+
+
   const handleClick = () => navigate("/sell-coin")
 
 
@@ -29,11 +29,11 @@ const PaymentMethod = () => {
       <Typography variant="h1" align="center" marginBottom="20px">
         { moneda } unidades
       </Typography>
-      
+
       <Button
         variant="contained"
         color="primary"
-        onClick={handleClick}
+        onClick={ handleClick }
         aria-label="Confirmar Método de Pago"
       >
         Confirmar

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
-import { loginStyle } from '../Login/loginStyle'
+import { loginStyle } from '../login/loginStyle'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { Container, Typography } from "@mui/material"
 import { useApiContext } from '../../../context/FetchContext'
@@ -22,10 +22,10 @@ const MontoInput = () => {
   const handleInputChange = (e) => setInputValue(e.target.value)
 
   const handleClick = () => {
-    if(!inputValue) toast.error('Debes ingresar la cantidad')
+    if (!inputValue) toast.error('Debes ingresar la cantidad')
     if (inputValue) {
       localStorage.setItem('coinToBuy', idCoin)
-      localStorage.setItem('amountToBuy', inputValue )
+      localStorage.setItem('amountToBuy', inputValue)
       navigate('/buypaymentmethod')
     }
   }
@@ -33,9 +33,9 @@ const MontoInput = () => {
   return (
     <Container maxWidth="xs" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       <Toaster
-          position="top-center"
-          toastOptions={ { duration: 5000, style: toastStyleBgRed} }
-        />
+        position="top-center"
+        toastOptions={ { duration: 5000, style: toastStyleBgRed } }
+      />
       <Typography variant='h2' sx={ loginStyle.typography }>
         Comprar
       </Typography>

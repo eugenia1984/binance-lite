@@ -9,7 +9,7 @@ const LoginForm = () => {
   const navigate = useNavigate()
 
   return (
-    <main style={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
+    <main style={ { margin: '1rem auto 20px', minHeight: '82vh' } }>
       <Container maxWidth="sm" sx={ LOGIN_STYLES.container }>
         <Box sx={ LOGIN_STYLES.box }>
           <ImageList sx={ { width: 100, height: 100 } }>

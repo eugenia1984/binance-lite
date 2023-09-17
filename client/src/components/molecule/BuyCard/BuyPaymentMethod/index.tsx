@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Container, Divider, FormControlLabel, FormControl, Radio, RadioGroup, Typography } from '@mui/material'
-import { loginStyle } from '../../Login/loginStyle'
+import { loginStyle } from '../../login/loginStyle'
 import { useApiContext } from '../../../../context/FetchContext'
 import { formatCurrencyToTwoDecimals, getAmountToPaid } from '../../../../utils/strings'
 import toast, { Toaster } from 'react-hot-toast'

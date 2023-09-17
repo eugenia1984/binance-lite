@@ -1,4 +1,12 @@
 export const FOOTER_STYLES = {
+  footer: {
+    height: '250px',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignContent: 'center',
+    justifyContent: 'center'
+  },
   container: {
     borderTop: '2px solid rgb(234, 236, 239)',
     margin: '0 auto',

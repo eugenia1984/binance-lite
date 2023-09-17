@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import TextField from '@mui/material/TextField'
-import { loginStyle } from '../Login/loginStyle'
+import { loginStyle } from '../login/loginStyle'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { Container, Typography } from "@mui/material"
 import { useApiContext } from '../../../context/FetchContext'

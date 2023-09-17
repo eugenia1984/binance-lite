@@ -8,16 +8,18 @@ Algunas vistas:
 
 ### Primer pantalla: iniciar sesión o registro
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/4826ff39-e8f3-43e9-8633-24435c05354d" width="300"  alt="login o registro"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/32d08bb7-d757-4a02-b7d3-10b63c70a69f" width="300"  alt="login o registro"/>
+
 
 ### Segunda pantalla: iniciar sesión
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/2e68aae8-2026-40dd-bb3c-723b1a755c8c" width="300"  alt="inicio de sesion"/>
+Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
 
--> Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/d4b2c0ad-b1f0-4aed-9ff9-be6ac43d7a07" width="300"  alt="inicio de sesion" style="margin-right: 24px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/7b73a4c8-88c4-485d-9c81-af7b3bdf1949" width="300"  alt="inicio de sesion"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b8a57b93-7403-46f6-8c11-0394fb251ca0" width="300"  alt="inicio de sesion" style="margin-right: 24px;"/>
 
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/2e0e5056-5e14-4151-94fe-8965e2fe6166" width="300"  alt="inicio de sesion"/>
 
 
 ---

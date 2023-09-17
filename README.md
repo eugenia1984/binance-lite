@@ -4,6 +4,25 @@ Realizaremos un rediseño de Binance Lite basado en los principios de simplifica
 
 Entendemos que el mundo del trading puede resultar complicado y abrumador para aquellos que recién comienzan, por lo que queremos lograr una reversión en la que se sientan cómodos, centrando su atención en los conceptos básicos y las operaciones esenciales.
 
+Algunas vistas:
+
+### Primer pantalla: iniciar sesión o registro
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/4826ff39-e8f3-43e9-8633-24435c05354d" width="300"  alt="login o registro"/>
+
+### Segunda pantalla: iniciar sesión
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/2e68aae8-2026-40dd-bb3c-723b1a755c8c" width="300"  alt="inicio de sesion"/>
+
+<br />
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/7b73a4c8-88c4-485d-9c81-af7b3bdf1949" width="300"  alt="inicio de sesion"/>
+
+
+
+-> Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
+
+
+
 ---
 
 ## <img width="30" height="30" src="https://img.icons8.com/cotton/30/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY

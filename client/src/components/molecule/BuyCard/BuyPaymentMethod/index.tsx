@@ -27,17 +27,9 @@ const BuyPaymentMethod: React.FC = () => {
     <Container maxWidth="xs" sx={ { minHeight: "82vh" } }>
       <Toaster
         position="top-center"
-        toastOptions={ {
-          duration: 5000,
-          style: toastStyleBgRed,
-        } }
+        toastOptions={ { duration: 5000, style: toastStyleBgRed } }
       />
-      <Typography
-        variant="h2"
-        align="center"
-        gutterBottom
-        sx={ loginStyle.typography }
-      >
+      <Typography variant="h2" sx={ loginStyle.typography }>
         Seleccionar metodo de cobro para comprar { coinToShow[0]?.name }
       </Typography>
       { coinToShow.length > 0 &&

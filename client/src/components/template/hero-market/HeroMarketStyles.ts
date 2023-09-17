@@ -1,13 +1,12 @@
 export const HERO_MARKET_STYLES = {
   container: {
-    paddingLeft: '0px !important',
-    padingTop: '0px !important',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignContent: 'space-around',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: '20px'
   },
   containerSaldo: {
     background: '#fff',
@@ -19,10 +18,11 @@ export const HERO_MARKET_STYLES = {
     maxWidth: '480px'
   },
   saldoEmail: {
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '600',
-    textAlign: 'center',
-    margin: '12px auto'
+    textAlign: 'left',
+    margin: '12px auto 24px',
+    lineHeight: '1.6'
   },
   saldoText: {
     display: 'flex',

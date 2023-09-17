@@ -4,6 +4,7 @@ import { Alert, AlertTitle, Box, Container, InputLabel, Typography, TextField } 
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import useAuth from '../../../hooks/useAuth'
 import { ADD_CARDS_STYLES } from './AgregarTarjetaStyles'
+import { getTheLastTwoNumbersOfCurrentYear } from '../../../utils/strings'
 
 const AgregarTarjeta = () => {
   const auth = useAuth()
@@ -13,16 +14,18 @@ const AgregarTarjeta = () => {
   const [titular, setTitular] = useState<string>('')
   const [errorTitular, setErrorTitular] = useState<string | null>(null)
   const [dateInput, setDateInput] = useState<string>('')
+  const [errorFechaVencimiento, setErrorFechaVencimiento] = useState<string | null>(null)
   const [cvv, setCvv] = useState<string>('')
   const [errorCvv, setErrorCvv] = useState<string | null>(null)
   const [direccion, setDireccion] = useState<string>('')
-  const [ errorDireccion, setErrorDireccion] = useState<string | null>(null)
+  const [errorDireccion, setErrorDireccion] = useState<string | null>(null)
   const [codigoPostal, setCodigoPostal] = useState<string>('')
-  const [ errorCodigoPostal, setErrorCodigoPostal] = useState<string | null>(null)
+  const [errorCodigoPostal, setErrorCodigoPostal] = useState<string | null>(null)
   const [hasError, setHasError] = useState<boolean>(false)
   const [message, setMessage] = useState({ text: "", msg: "" })
   const [nextButton, setNextButton] = useState<boolean>(false)
 
+  console.log('DATE INPUT -> ', dateInput)
   const navigate = useNavigate()
 
   const handleNumeroTarjeta = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,11 +61,9 @@ const AgregarTarjeta = () => {
   const handleFechaVencimiento = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
 
-    // Only numbers and "/"
-    const formattedValue = value.replace(/[^\d/]/g, '')
+    const formattedValue = value.replace(/[^\d/]/g, '') // Only numbers and "/"
+    const parts = formattedValue.split('/') // Always the  "/" is between MM and YY 
 
-    // Alwas the  "/" is between MM and YY 
-    const parts = formattedValue.split('/')
     if (parts.length === 1 && formattedValue.length === 2) {
       const newValue = `${ formattedValue }/`
       setDateInput(newValue)
@@ -70,6 +71,13 @@ const AgregarTarjeta = () => {
       const month = parts[0].slice(0, 2)
       const year = parts[1].slice(0, 2)
       const newValue = `${ month }/${ year }`
+
+      if (+month < 1 || +month > 12 || +year <= +getTheLastTwoNumbersOfCurrentYear()) {
+        setDateInput(newValue)
+        setErrorFechaVencimiento('X - Debes ingresar una fecha válida')
+        return
+      }
+      setErrorFechaVencimiento(null)
       setDateInput(newValue)
     } else {
       setDateInput(formattedValue)
@@ -161,7 +169,7 @@ const AgregarTarjeta = () => {
             <TextField
               type="text"
               id="numero-tarjeta"
-              label="Ingrese numero de la tarjeta"
+              placeholder="Ingrese numero de la tarjeta"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ numero }
@@ -176,7 +184,7 @@ const AgregarTarjeta = () => {
             <TextField
               type="text"
               id="titular-tarjeta"
-              label="Tal como figura en la tarjeta"
+              placeholder="Tal como figura en la tarjeta"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ titular }
@@ -190,11 +198,13 @@ const AgregarTarjeta = () => {
             <TextField
               type="text"
               id="fecha-vencimiento"
-              label="MM/AA. Ejemplo: 02/24"
+              placeholder="MM/AA. Ejemplo: 02/24"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ dateInput }
               onChange={ handleFechaVencimiento }
+              error={ Boolean(errorFechaVencimiento) }
+              helperText={ errorFechaVencimiento }
               inputProps={ { pattern: "\\d{2}/\\d{2}", inputMode: "numeric", maxLength: 5 } }
             />
             <InputLabel htmlFor="cvv-tarjeta" sx={ ADD_CARDS_STYLES.textBold }>
@@ -203,7 +213,7 @@ const AgregarTarjeta = () => {
             <TextField
               type="number"
               id="cvv-tarjeta"
-              label="CVV"
+              placeholder="CVV"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ cvv }
@@ -221,7 +231,7 @@ const AgregarTarjeta = () => {
             <TextField
               type="text"
               id="direccion-facturacion"
-              label="Direccion"
+              placeholder="Dirección"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ direccion }
@@ -235,7 +245,7 @@ const AgregarTarjeta = () => {
             <TextField
               type="text"
               id="codigo-postal"
-              label="Código postal"
+              placeholder="Código postal"
               variant="filled"
               sx={ ADD_CARDS_STYLES.textField }
               value={ codigoPostal }

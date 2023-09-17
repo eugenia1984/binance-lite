@@ -17,7 +17,7 @@ const Market: React.FC = () => {
             xs: 'column',
             sm: 'row'
           },
-          alignItems: 'center'
+          alignItems: 'flex-start'
         } }
       >
         <HeroMarket />

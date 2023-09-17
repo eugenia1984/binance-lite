@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { Alert, AlertTitle, Container, TextField, Typography } from '@mui/material'
+import { Container, InputLabel, TextField, Typography } from '@mui/material'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { loginStyle } from './loginStyle'
 import { URL_LOGIN, emailRegex } from '../../../utils/constants'
@@ -16,52 +16,50 @@ const LoginScreen: React.FC = () => {
   const { login } = auth
   const navigate = useNavigate()
 
-  const [userOrEmail, setUserOrEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
+  const [userOrEmail, setUserOrEmail] = useState<string>('')
+  const [errorUserOrEmail, setErrorUserOrEmail] = useState<string | null>(null)
+  const [password, setPassword] = useState<string>('')
+  const [errorPassword, seterrorPassword] = useState<string | null>(null)
   const [showPasswordInput, setShowPasswordInput] = useState<boolean>(false)
-  const [error, setError] = useState<boolean>(false)
-  const [message, setMessage] = useState({ text: "", msg: "" })
-  const [welcomeMessage, setWelcomeMessage] = useState({ text: "" })
-  const [showMessage, setShowMessage] = useState<boolean>(false)
 
-  const isValidEmail = emailRegex.test(userOrEmail)
+  const handleUserOrEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputUserOrEmail = e.target.value
+    const isValidEmail = emailRegex.test(inputUserOrEmail)
+
+    if (isValidEmail) {
+      setUserOrEmail(inputUserOrEmail)
+      setErrorUserOrEmail(null)
+    } else {
+      setUserOrEmail(inputUserOrEmail)
+      setErrorUserOrEmail('X - Correo electrónico no válido')
+    }
+  }
+
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputPassword = e.target.value
+
+    if (inputPassword.length > 6) {
+      setPassword(inputPassword)
+      seterrorPassword(null)
+    } else {
+      setPassword(inputPassword)
+      seterrorPassword('X - La contraseña es obligatoria y debe tener más de 6 caracteres')
+    }
+  }
 
   const handleNextClick = () => {
-    if ([userOrEmail].includes("")) {
-      setError(true)
-      setMessage({
-        text: "El email es obligatorio",
-        msg: "Email",
-      });
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
+    if (userOrEmail === '') {
+      toast.error(' Debes ingresar el correo electónico')
+      setShowPasswordInput(false)
       return
     }
-    if (!isValidEmail) {
-      setError(true)
-      setMessage({
-        text: "El email contiene caracteres invalidos",
-        msg: "Email invalido",
-      });
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
-      return
-    }
+
     setShowPasswordInput(true)
   }
 
   const handleLoginClick = async () => {
-    if (!password || password.length < 6) {
-      setError(true)
-      setMessage({
-        text: "El password es obligatorio y debe tener más de 6 caracteres",
-        msg: "password invalido",
-      })
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
+    if (userOrEmail === '' || password === '') {
+      toast.error(' Debes ingresar el correo y  la contraseña')
       return
     }
 
@@ -71,18 +69,18 @@ const LoginScreen: React.FC = () => {
       login(data.data) // Store the token in the localStorage
       removeLoading()
 
-      // If is an invalid login shows the alert
+      // If is an invalid login, due to wrong userOrEmail or password, shows the alert
       if (data.status === 'true' && data.message === 'Credenciales invalidas') {
-        toast.error('Error al loguearte')
+        toast.error(' Error al loguearte, verifica el correo y la contraseña')
         return
       }
 
       // If it's login ok redirect to market
       if (data.status === 'true' && data.message === 'Login Correcto') {
-        toast.success('Login Correcto')
+        toast.success(' Login Correcto')
         setTimeout(() => {
           navigate('/market')
-        }, 6000)
+        }, 5000)
       }
     } catch (error) {
       toast.error(`Error al loguearte: ${ error }`)
@@ -93,7 +91,7 @@ const LoginScreen: React.FC = () => {
     <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
       <Toaster
         position="top-center"
-        toastOptions={ { duration: 5000, style: toastStyleBgBlack } }
+        toastOptions={ { duration: 3000, style: toastStyleBgBlack } }
       />
       <Typography
         variant="h2"
@@ -103,59 +101,63 @@ const LoginScreen: React.FC = () => {
       >
         Iniciar sesión
       </Typography>
-      <TextField
-        label="Correo electrónico"
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        value={ userOrEmail }
-        onChange={ (e) => setUserOrEmail(e.target.value) }
-        sx={ { marginBottom: "20px", borderRadius: '12px' } }
-      />
-      { error &&
-        <Alert severity="error">
-          <AlertTitle>Error</AlertTitle>
-          { message.text } — <strong>{ message.msg }</strong>
-        </Alert>
-      }
-      { showPasswordInput &&
+      <form>
+        <InputLabel htmlFor="correo" sx={ loginStyle.label }>
+          Correo electrónico
+        </InputLabel>
         <TextField
-          label="Contraseña"
-          type="password"
-          variant="outlined"
+          type="text"
+          id="correo"
+          placeholder="Ingresa el correo electrónico"
+          variant="filled"
           fullWidth
-          margin="normal"
-          value={ password }
-          onChange={ (e) => setPassword(e.target.value) }
+          value={ userOrEmail }
+          onChange={ handleUserOrEmail }
+          error={ Boolean(errorUserOrEmail) }
+          helperText={ errorUserOrEmail }
+          sx={ { marginBottom: '20px' } }
         />
-      }
-      { showMessage &&
-        <Alert severity="success">
-          <AlertTitle>Success</AlertTitle>
-          { welcomeMessage.text } —{ " " }
-          <strong>Registro con Exito! Seras redireccionado al Market</strong>
-        </Alert>
-      }
-      <PrimaryButton
-        text={ !showPasswordInput ? "Siguiente" : "Iniciar sesión" }
-        ariaLabelText="Continuar con google"
-        onClick={ showPasswordInput ? handleLoginClick : handleNextClick }
-        style={ { marginBottom: "20px" } }
-      />
-      <Typography
-        variant="h4"
-        align="center"
-        my={ 2 }
-      >
-        ¿Aún no tenés una cuenta?
-      </Typography>
-      <PrimaryButton
-        text='Crear cuenta en Binance'
-        ariaLabelText='Crear cuenta en Binance'
-        variant='outlined'
-        style={ loginStyle.btnCreateAccount }
-        onClick={ () => navigate('/') }
-      />
+        { showPasswordInput &&
+          <>
+            <InputLabel htmlFor="password" sx={ loginStyle.label }>
+              Contraseña
+            </InputLabel>
+            <TextField
+              type="password"
+              id="password"
+              placeholder="Ingresa la contraseña"
+              variant="filled"
+              fullWidth
+              value={ password }
+              onChange={ handlePassword }
+              error={ Boolean(errorPassword) }
+              helperText={ errorPassword }
+              sx={ { marginBottom: '20px' } }
+            />
+          </>
+        }
+        <PrimaryButton
+          text={ !showPasswordInput ? "Siguiente" : "Iniciar sesión" }
+          ariaLabelText="Continuar con google"
+          onClick={ showPasswordInput ? handleLoginClick : handleNextClick }
+          sx={ { my: '20px' } }
+        />
+        <Typography
+          variant="h4"
+          align="center"
+          my={ 2 }
+        >
+          ¿Aún no tenés una cuenta?
+        </Typography>
+        <PrimaryButton
+          text='Crear cuenta en Binance'
+          ariaLabelText='Crear cuenta en Binance'
+          variant="contained"
+          color="secondary"
+          style={ loginStyle.btnCreateAccount }
+          onClick={ () => navigate('/') }
+        />
+      </form>
     </Container>
   )
 }

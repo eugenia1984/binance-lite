@@ -23,7 +23,7 @@ const HeroMarket = () => {
     <>
       <Grid item xs={ 12 }>
         <Typography sx={ HERO_MARKET_STYLES.saldoEmail }>
-          { loginAuth?.email }
+         Bienvenido/a  { loginAuth?.email }
         </Typography>
       </Grid>
       <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ HERO_MARKET_STYLES.container }>

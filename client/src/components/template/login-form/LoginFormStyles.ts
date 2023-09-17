@@ -45,12 +45,10 @@ export const LOGIN_STYLES = {
   txt2: {
     margin: '1.5rem 0rem 0rem',
     fontSize: '16px',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: '700'
   },
   txtLink: {
     margin: '1.5rem 0rem 0rem',
-    fontSize: '18px',
-    textAlign: 'center',
-    fontWeight: '800'
   }
 }

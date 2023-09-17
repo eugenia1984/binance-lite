@@ -37,27 +37,25 @@ const BuyCoin = () => {
 
   const handleCompraClick = () => {
     toast.success('Compra realizada correctamente')
-    // once the buy it`s ok delete the localStorage
+    // once the buy it's ok delete the localStorage
     localStorage.removeItem('coinToBuy')
     localStorage.removeItem('amountToBuy')
     setTimeout(() => {
       navigate('/wallets')
-    }, 6000)
+    }, 5000)
   }
 
   return (
     <Box sx={ BUY_COIN.boxContainer } >
-       <Toaster
-          position="top-center"
-          toastOptions={ {
-            duration: 5000,
-            style: toastStyleBgGreen,
-          } }
-        />
+      <Toaster
+        position="top-center"
+        toastOptions={ { duration: 4000, style: toastStyleBgGreen } }
+      />
       { coin &&
-        <Card sx={ { maxWidth: 300, objectFit: 'cover' } }>
+        <Card sx={ BUY_COIN.cardContainer }>
           <CardMedia
-            sx={ { height: 180 } }
+            component="img"
+            sx={ { height: '160px', width: '160px', margin: '0 auto' } }
             image={ getSrcImg(coin.iconUrl) }
             title={ coin.name }
           />
@@ -79,8 +77,8 @@ const BuyCoin = () => {
             </Typography>
             <Divider />
             <Typography variant="h4" gutterBottom my={ 2 } >
-            Total a abonar: $ { +getAmountToPaid(coin.currentPrice, cantidad, '500') } 
-          </Typography>
+              Total a abonar: $ { +getAmountToPaid(coin.currentPrice, cantidad, '500') }
+            </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" onClick={ handleCompraClick } aria-label="Comprar">

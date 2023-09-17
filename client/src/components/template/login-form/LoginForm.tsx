@@ -3,6 +3,7 @@ import { ImageList, Typography, Container, Box, ImageListItem } from '@mui/mater
 import { LOGIN_STYLES } from './LoginFormStyles'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import Person2Icon from '@mui/icons-material/Person2'
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration'
 
 const LoginForm = () => {
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ const LoginForm = () => {
     <main style={ { minHeight: "80vh" } }>
       <Container maxWidth="sm" sx={ LOGIN_STYLES.container }>
         <Box sx={ LOGIN_STYLES.box }>
-          <ImageList sx={ { width: 120, height: 120 } }>
+          <ImageList sx={ { width: 100, height: 100 } }>
             <ImageListItem>
               <img
                 src={ "../../binance-64.png" }
@@ -22,17 +23,17 @@ const LoginForm = () => {
             </ImageListItem>
           </ImageList>
           <Typography sx={ LOGIN_STYLES.txt }>
-            Inscríbete para conseguir 100 USDT de descuento en la comisión de
-            trading
+            Inscríbete para conseguir 100 USDT de descuento en la comisión de trading
           </Typography>
           <Box sx={ LOGIN_STYLES.btnContainer }>
             <PrimaryButton
-              text="Regístrate "
-              ariaLabelText=""
+              text=" Regístrate"
+              ariaLabelText="Regístrate"
               variant="contained"
               color="primary"
-              icon={ <Person2Icon /> }
+              icon={ <AppRegistrationIcon /> }
               onClick={ () => navigate("/register/continue") }
+              sx={ { width: '300px' } }
             />
             <Typography sx={ LOGIN_STYLES.txt2 }>
               ¿Ya tiene una cuenta?
@@ -40,10 +41,12 @@ const LoginForm = () => {
             <Typography sx={ LOGIN_STYLES.txtLink }>
               <PrimaryButton
                 text="Iniciar sesión"
-                ariaLabelText=""
+                ariaLabelText="Iniciar sesión"
                 variant="contained"
                 color="secondary"
+                icon={ <Person2Icon /> }
                 onClick={ () => navigate("/login") }
+                sx={ { width: '300px' } }
               />
             </Typography>
           </Box>

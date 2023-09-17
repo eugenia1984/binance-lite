@@ -49,3 +49,8 @@ export function getSrcImg(input: string): string | null {
   }
   return null // if there is no ".png" retunr devolvemos null
 }
+
+export function getTheLastTwoNumbersOfCurrentYear(): string {
+  const thisYear = (new Date()).getFullYear()
+  return thisYear.toString().substring(2)
+}

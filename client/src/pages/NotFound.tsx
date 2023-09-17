@@ -15,7 +15,7 @@ const NotFound: React.FC<NotFoundProps> = () => {
       alignItems="center"
       spacing={ 4 }
       maxWidth="lg"
-      sx={{minHeight: '85vh'}}
+      sx={{ margin: '1rem auto 150px', minHeight: '82vh' }}
     >
       <Grid item xs={ 12 }>
         <Typography

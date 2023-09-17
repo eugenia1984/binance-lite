@@ -31,7 +31,7 @@ const MontoInput = () => {
   }
 
   return (
-    <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
+    <Container maxWidth="xs" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       <Toaster
           position="top-center"
           toastOptions={ { duration: 5000, style: toastStyleBgRed} }

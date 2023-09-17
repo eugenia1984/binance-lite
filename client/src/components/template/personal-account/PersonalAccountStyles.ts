@@ -1,8 +1,9 @@
 export const PERSONAL_STYLES = {
   main: {
-    minHeight: '80vh',
+    minHeight: '82vh',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '1rem auto 150px'
   },
   container: {
     display: 'flex',

@@ -3,8 +3,8 @@ export const BUY_COIN = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '40px',
     height: '82vh',
+    margin: '40px auto 150px'
   },
   cardContainer:  { 
     maxWidth: 300,     

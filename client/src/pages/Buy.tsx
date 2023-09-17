@@ -15,7 +15,7 @@ const Buy = () => {
   const handleSearch = (results) => setSearch(results)
 
   return (
-    <Container maxWidth="sm" sx={ { minHeight: '82vh' } }>
+    <Container maxWidth="sm" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       <Typography
         variant="h2"
         align="center"

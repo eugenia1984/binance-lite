@@ -1,7 +1,9 @@
 export const NAVBAR_STYLES = {
   container: {
     maxWidth: '320px',
-    margin: '0 auto'
+    margin: '0 auto',
+    justifyContent: 'center',
+    gap: '4px'
   },
   linkIconActive: {
     color: '#1E2329'

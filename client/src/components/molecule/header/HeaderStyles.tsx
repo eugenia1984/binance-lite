@@ -3,7 +3,7 @@ export const HEADER_STYLES = {
     margin: '0 auto'
   },
   containerLogo: {
-    padding: '0.75rem 1.25rem',
+    padding: '0.75rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',

@@ -26,11 +26,7 @@ const NavBar: React.FC<NavBarProps> = () => {
 
   return (
     <nav>
-      <Grid
-        container
-        spacing={ 2 }
-        sx={ NAVBAR_STYLES.container }
-      >
+      <Grid container spacing={ 2 } sx={ NAVBAR_STYLES.container }>
         <Grid item>
           { !openBuySellModal &&
             <Link

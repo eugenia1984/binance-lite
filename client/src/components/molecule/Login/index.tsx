@@ -67,6 +67,7 @@ const LoginScreen: React.FC = () => {
       addLoading()
       const { data } = await axios.post(URL_LOGIN, { userOrEmail, password })
       login(data.data) // Store the token in the localStorage
+
       removeLoading()
 
       // If is an invalid login, due to wrong userOrEmail or password, shows the alert
@@ -88,7 +89,7 @@ const LoginScreen: React.FC = () => {
   }
 
   return (
-    <Container maxWidth="xs" sx={ { minHeight: '82vh' } }>
+    <Container maxWidth="xs" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       <Toaster
         position="top-center"
         toastOptions={ { duration: 3000, style: toastStyleBgBlack } }

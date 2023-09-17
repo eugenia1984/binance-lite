@@ -5,7 +5,7 @@ import HeroMarket from '../components/template/hero-market/HeroMarket'
 
 const Market: React.FC = () => {
   return (
-    <main style={ { margin: '1rem auto' } }>
+    <main style={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       <Grid
         container
         maxWidth="lg"

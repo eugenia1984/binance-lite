@@ -1,7 +1,10 @@
 export const FOOTER_STYLES = {
   container: {
     borderTop: '2px solid rgb(234, 236, 239)',
-    margin: '0 auto'
+    margin: '0 auto',
+    position: 'fixed',
+    bottom: '0',
+    background: '#fff'
   },
   gridYear: {
     display: {
@@ -16,9 +19,9 @@ export const FOOTER_STYLES = {
   },
   gridNavBar: {
     display: {
-      xs: 'flex',
+      xs: 'block',
       sm: 'none',
-      padding: '0.75rem 1.25rem'
+      padding: '0.25rem 1.25rem'
     },
     flexDirection: 'column',
     alignContent: 'center',

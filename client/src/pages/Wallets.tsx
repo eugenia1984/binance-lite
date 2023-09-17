@@ -20,25 +20,14 @@ const Wallets: React.FC<WalletsProps> = () => {
 
 
   return (
-    <Container maxWidth="sm" sx={ { minHeight: '82vh', marginTop: '1.75rem' } }>
+    <Container maxWidth="sm" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       { loginAuth &&
         <Typography variant="h2" sx={ { marginBottom: '24px', fontSize: '20px' } } >
           Bienvenido/a { loginAuth?.email }
         </Typography>
       }
-
       <HeroWallet />
-      <Box
-        sx={ {
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-          my: '2rem',
-          gap: '12px'
-        } }
-      >
-      </Box>
-      <Grid container>
+      <Grid container sx={{ marginTop: '5rem', alignItems: 'center' }}>
         <Grid item xs={ 6 } sm={ 8 } sx={ { alignItems: 'center' } }>
           <Typography variant="h2">
             { showArea ? 'Tendencia' : 'Distibucion de activos' }

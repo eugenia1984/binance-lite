@@ -3,7 +3,7 @@ export const HEADER_STYLES = {
     margin: '0 auto'
   },
   containerLogo: {
-    padding: '0.5rem 0.75rem',
+    padding: '0.75rem 1.25rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -14,13 +14,13 @@ export const HEADER_STYLES = {
     letterSpacing: '1px',
     color: 'rgb(252, 213, 53)',
     marginLeft: '0.25rem',
-    fontSize: '16px'
+    fontSize: '14px'
   },
-  containerAvatar: {
+  containerLogout: {
     padding: '0.5rem 0.75rem',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'flex-end'
   },
   containerNavBar: {
     display: 'flex',
@@ -36,14 +36,5 @@ export const HEADER_STYLES = {
       xs: 'none',
       sm: 'flex'
     },
-  },
-  linkLogo: {
-    textDecoration: 'none',
-    display: 'flex',
-    alignContent: 'center',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row'
   }
 }

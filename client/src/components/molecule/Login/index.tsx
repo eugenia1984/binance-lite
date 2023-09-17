@@ -77,7 +77,7 @@ const LoginScreen: React.FC = () => {
 
       // If it's login ok redirect to market
       if (data.status === 'true' && data.message === 'Login Correcto') {
-        toast.success(' Login Correcto')
+        toast.success(' Login Correcto. Redireccionando a Mercado.')
         setTimeout(() => {
           navigate('/market')
         }, 5000)

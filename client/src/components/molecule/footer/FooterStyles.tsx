@@ -18,7 +18,7 @@ export const FOOTER_STYLES = {
     display: {
       xs: 'flex',
       sm: 'none',
-      padding: '1rem'
+      padding: '0.75rem 1.25rem'
     },
     flexDirection: 'column',
     alignContent: 'center',

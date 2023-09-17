@@ -9,16 +9,16 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <Grid container maxWidth="lg" sx={ FOOTER_STYLES.container } >
-        <Grid item xs={ 12 } sx={ FOOTER_STYLES.gridYear } >
-          <Typography>
-            Binance &copy; { new Date().getFullYear() }
-          </Typography>
-        </Grid>
         { token &&
           <Grid item xs={ 12 } sx={ FOOTER_STYLES.gridNavBar } >
             <NavBar />
           </Grid>
         }
+        <Grid item xs={ 12 } sx={ FOOTER_STYLES.gridYear } >
+          <Typography>
+            Binance-L &copy; { new Date().getFullYear() }
+          </Typography>
+        </Grid>
       </Grid>
     </footer>
   )

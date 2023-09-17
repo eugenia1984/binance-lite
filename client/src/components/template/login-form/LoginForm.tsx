@@ -23,7 +23,7 @@ const LoginForm = () => {
             </ImageListItem>
           </ImageList>
           <Typography sx={ LOGIN_STYLES.txt }>
-            Inscríbete para conseguir 100 USDT de descuento en la comisión de trading
+            Inscríbete para conseguir 1000 USDT de saldo inicial
           </Typography>
           <Box sx={ LOGIN_STYLES.btnContainer }>
             <PrimaryButton
@@ -33,7 +33,7 @@ const LoginForm = () => {
               color="primary"
               icon={ <AppRegistrationIcon /> }
               onClick={ () => navigate("/register/continue") }
-              sx={ { width: '300px' } }
+              sx={ { width: '260px' } }
             />
             <Typography sx={ LOGIN_STYLES.txt2 }>
               ¿Ya tiene una cuenta?
@@ -46,7 +46,7 @@ const LoginForm = () => {
                 color="secondary"
                 icon={ <Person2Icon /> }
                 onClick={ () => navigate("/login") }
-                sx={ { width: '300px' } }
+                sx={ { width: '260px' } }
               />
             </Typography>
           </Box>

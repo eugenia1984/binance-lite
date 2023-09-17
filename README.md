@@ -14,12 +14,9 @@ Algunas vistas:
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/2e68aae8-2026-40dd-bb3c-723b1a755c8c" width="300"  alt="inicio de sesion"/>
 
-<br />
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/7b73a4c8-88c4-485d-9c81-af7b3bdf1949" width="300"  alt="inicio de sesion"/>
-
-
-
 -> Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/7b73a4c8-88c4-485d-9c81-af7b3bdf1949" width="300"  alt="inicio de sesion"/>
 
 
 

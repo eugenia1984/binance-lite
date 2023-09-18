@@ -25,7 +25,6 @@ const AgregarTarjeta = () => {
   const [message, setMessage] = useState({ text: "", msg: "" })
   const [nextButton, setNextButton] = useState<boolean>(false)
 
-  console.log('DATE INPUT -> ', dateInput)
   const navigate = useNavigate()
 
   const handleNumeroTarjeta = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,13 +6,6 @@ export interface RegisterAuth {
   balance?: number
   celphone?: number
 }
-// export interface GoogleAuth {
-//   email?: string
-//   displayName?: string,
-//   photoURL?: string,
-//   uid?: string,
-//   token?: string
-// }
 
 export interface LoginAuth {
   userOrEmail?: string
@@ -20,14 +13,3 @@ export interface LoginAuth {
   token: string
 }
 
-export interface CoinData {
-  change: string 
-  color: string 
-  currentPrice: string 
-  iconUrl:  string
-  marketCap: string 
-  name: string
-  symbol:  string
-  uuid: string 
-
-}

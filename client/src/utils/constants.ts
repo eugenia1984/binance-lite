@@ -1,9 +1,3 @@
-/* URLs*/
-// To register a new user 
-export const URL_REGISTER = "https://binance-production.up.railway.app/api/v1/users/register"
-// Lo login in the app with email or telephone and password
-export const URL_LOGIN= "https://binance-production.up.railway.app/api/v1/auth/login"
-
 /* To valid e-mail */
 export const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 

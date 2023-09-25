@@ -7,6 +7,7 @@ import { useLoader } from '../../../context/LoaderProvider'
 import { BUY_COIN } from './BuyCoinStyles'
 import { getAmountToPaid, getSrcImg } from '../../../utils/strings'
 import toast, { Toaster } from 'react-hot-toast'
+import { URL_GET_CURRENCY_BY_ID } from '../../../utils/url'
 import { toastStyleBgGreen } from '../../../utils/styles'
 
 const BuyCoin = () => {
@@ -21,7 +22,7 @@ const BuyCoin = () => {
   const getCoinId = async () => {
     try {
       addLoading()
-      const response = await axios.get(`https://binance-production.up.railway.app/api/v1/cryptocurrencies/${ id }`)
+      const response = await axios.get(`${URL_GET_CURRENCY_BY_ID}/${ id }`)
       const coinData: CoinData = response.data
       setCoin(coinData)
     } catch (error) {

@@ -1,10 +1,10 @@
-export type CoinDataResponse = {
+export interface CoinDataResponse {
   status: string
   data: CoinData[]
   message: string
 }
 
-export type CoinData = {
+export interface CoinData {
   uuid: string
   symbol: string
   name: string

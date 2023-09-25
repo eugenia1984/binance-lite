@@ -28,7 +28,7 @@ Siempre se le informa al usuario si hay errores al completar, si ocurre algún e
 
 - Front: [https://binance-l.netlify.app/](https://binance-l.netlify.app/)
 
-- Back: [https://binance-production.up.railway.app/api/v1/docs#/](https://binance-production.up.railway.app/api/v1/docs#/)
+- Back: [https://binance-production.up.railway.app/api/v1/docs#/](https://binance-production.up.railway.app/api/v1/docs#/) ó [https://binance-nocountry.zeabur.app/api/v1/docs/#/](https://binance-nocountry.zeabur.app/api/v1/docs/#/)
 
 ---
 

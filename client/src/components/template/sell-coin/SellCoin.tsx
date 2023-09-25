@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { CoinData } from '../../../models/CoinDataResponse'
 import { useNavigate } from 'react-router-dom'
+import { URL_GET_CURRENCY_BY_ID } from '../../../utils/url'
 
 const SellCoin = () => {
   const [coin, setCoin] = useState<CoinData | undefined>(undefined)
@@ -17,7 +18,7 @@ const SellCoin = () => {
 
   const getCoinId = async () => {
     try {
-      const response = await axios.get(`https://binance-production.up.railway.app/api/v1/cryptocurrencies/${id}`)
+      const response = await axios.get(`${ URL_GET_CURRENCY_BY_ID }/${ id }`)
       const coinData: CoinData = response.data
       setCoin(coinData)
     } catch (error) {
@@ -42,34 +43,34 @@ const SellCoin = () => {
       marginTop="-100px"
       height="100vh"
     >
-      {isCompraVisible ?
+      { isCompraVisible ?
         ( // Mostrar el cartel de compra si isCompraVisible es true
           <Alert severity="success">
             <AlertTitle>Venta</AlertTitle>
-             Venta realizada correctamente
+            Venta realizada correctamente
           </Alert>
         )
         : coin ?
           ( // Mostrar la tarjeta solo si isCompraVisible es false y coin está disponible
-            <Card sx={{ maxWidth: 300, objectFit: 'cover' }}>
+            <Card sx={ { maxWidth: 300, objectFit: 'cover' } }>
               <CardMedia
-                sx={{ height: 140 }}
-                image={coin.iconUrl}
+                sx={ { height: 140 } }
+                image={ coin.iconUrl }
                 title="green iguana"
               />
               <CardContent>
                 <Typography gutterBottom variant="h4" component="div">
-                  Id: {coin.uuid}
+                  Id: { coin.uuid }
                 </Typography>
                 <Typography gutterBottom variant="h4" component="div">
-                  Symbol {coin.symbol}
+                  Symbol { coin.symbol }
                 </Typography>
                 <Typography variant="h5" color="text.secondary">
-                  Price: USD {coin.currentPrice}
+                  Price: USD { coin.currentPrice }
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={handleCompraClick}>
+                <Button size="small" onClick={ handleCompraClick }>
                   Vender
                 </Button>
               </CardActions>
@@ -78,7 +79,7 @@ const SellCoin = () => {
           :
           (
             'Cargando...'
-          )}
+          ) }
     </Box>
   )
 }

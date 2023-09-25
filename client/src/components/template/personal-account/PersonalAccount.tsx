@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { Typography, Container, Box, TextField, Alert, AlertTitle } from '@mui/material'
+import { Alert, AlertTitle, Box, Container, InputLabel, Typography, TextField } from '@mui/material'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { PERSONAL_STYLES } from './PersonalAccountStyles'
 import useAuth from '../../../hooks/useAuth'
-import {  emailRegex } from '../../../utils/constants'
+import { emailRegex } from '../../../utils/constants'
 import { URL_REGISTER } from '../../../utils/url'
 import { randomPhone } from '../../../helpers/RandonName'
 
 const PersonalAccount: React.FC = () => {
   const auth = useAuth()
   const { registerAuth } = auth
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const [username, setUsername] = useState<string>("")
+  const [email, setEmail] = useState<string>('')
+  const [errorEmail, setErrorEmail] = useState<string | null>(null)
+
+  const [password, setPassword] = useState<string>('')
+  const [errorPassword, setErrorPassword] = useState<string | null>(null)
+
+  const [username, setUsername] = useState<string>('')
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [error, setError] = useState<boolean>(false)
-  const [message, setMessage] = useState({ text: "", msg: "" })
-  const [welcomeMessage, setWelcomeMessage] = useState({ text: "" })
+  const [message, setMessage] = useState({ text: '', msg: '' })
+  const [welcomeMessage, setWelcomeMessage] = useState({ text: '' })
   const [showMessage, setShowMessage] = useState<boolean>(false)
 
   const balance = 0
@@ -26,12 +30,29 @@ const PersonalAccount: React.FC = () => {
   const isValidEmail = emailRegex.test(email)
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (email) {
+  // useEffect(() => {
+  //   if (email) {
+  //     const newUserName = email.split("@")[0]
+  //     setUsername(newUserName)
+  //   }
+  // }, [email])
+
+  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputEmail = e.target.value
+    const isValidEmail = emailRegex.test(inputEmail)
+
+    if (isValidEmail) {
+      setEmail(inputEmail)
+      setErrorEmail(null)
+      // set the user name
       const newUserName = email.split("@")[0]
       setUsername(newUserName)
+    } else {
+      setEmail(inputEmail)
+      setErrorEmail('X - Correo electrónico no válido')
     }
-  }, [email])
+
+  }
 
   const handleRegister = async () => {
     if (!password || password.length < 6) {
@@ -127,17 +148,24 @@ const PersonalAccount: React.FC = () => {
     <main style={ PERSONAL_STYLES.main }>
       <Container maxWidth="sm" sx={ PERSONAL_STYLES.container }>
         <Box sx={ PERSONAL_STYLES.boxContainer }>
-          <Typography variant="h1" component="h1" align='left' sx={ { width: '100%', padding: '2rem 2rem 1rem' } }>
+          <Typography variant="h1" component="h2" sx={ PERSONAL_STYLES.title }>
             Crea tu cuenta
           </Typography>
           <form style={ { maxWidth: "400px" } }>
+            <InputLabel htmlFor="register-email" sx={ PERSONAL_STYLES.label }>
+              Correo electrónico
+            </InputLabel>
             <TextField
-              id="filled-basic"
-              label="Correo electrónico"
+              type="text"
+              id="register-email"
+              placeholder="Ingresa el correo electrónico"
               variant="filled"
-              sx={ PERSONAL_STYLES.inputEmailPhone }
+              fullWidth
               value={ email }
-              onChange={ (e) => setEmail(e.target.value) }
+              onChange={ handleEmail }
+              error={ Boolean(errorEmail) }
+              helperText={ errorEmail }
+              sx={ { marginBottom: '20px' } }
             />
             { error && (
               <Alert severity="error">
@@ -147,7 +175,7 @@ const PersonalAccount: React.FC = () => {
             ) }
             { showPassword && (
               <TextField
-                id="filled-basic"
+                id="register-password"
                 label="Contraseña"
                 variant="filled"
                 type="password"
@@ -165,7 +193,7 @@ const PersonalAccount: React.FC = () => {
                 </strong>
               </Alert>
             ) }
-            <Typography variant="body1" my={ 4 } gutterBottom>
+            <Typography my={ 4 } gutterBottom>
               Al crear una cuenta, acepto las
               <Box component="span" sx={ PERSONAL_STYLES.textBold }>
                 condiciones de servicio

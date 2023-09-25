@@ -22,10 +22,10 @@ export const PERSONAL_STYLES = {
     my: 3,
   },
   textBold: {
-    fontWeight: '800',
+    fontWeight: '600',
     margin: '0px 4px',
     textAlign: 'left',
-    fontSize: '18px'
+    fontSize: '14px'
   },
   link: {
     margin: '25px',
@@ -36,10 +36,6 @@ export const PERSONAL_STYLES = {
     textDecoration: 'none',
     marginBottom: '250px'
   },
-  inputEmailPhone: {
-    width: "100%",
-    marginBottom: "20px"
-  },
   inputPassword: {
     width: "100%",
     marginBottom: "20px"
@@ -47,5 +43,13 @@ export const PERSONAL_STYLES = {
   textFiled: {
     width: "100%",
     marginBottom: "20px"
-  }
+  },
+  title: { 
+    width: '100%', 
+    padding: '2rem 2rem 1rem', 
+    textAlign: 'left' 
+  },
+  label: {
+    fontWeight: '600'
+}
 }

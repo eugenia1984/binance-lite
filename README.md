@@ -21,6 +21,27 @@ Siempre se le informa al usuario si hay errores al completar, si ocurre algún e
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b49f2fe6-658a-4265-997f-a388cd7f17bb" height="400"  alt="inicio de sesion"/>
 
+## Tercer pantalla: Mercado (/market)
+
+Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
+
+... se puede ver el saldo u ocultarlo
+
+... tenemos un slider con las criptomonedass más vendidas
+
+... tenemos la tabla para ver a los que venimos siguiendo en **Lista de seguimiento** y podemos ver todas las criptomonedas en **Monedas**
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b2992213-3793-49e7-80d9-ca2b8edd1c24" height="400"  alt="inicio de sesion" style="margin-right: 40px;"/>
+
+-> Lista de monedas
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/a7e02ba8-fe1f-4cb2-860b-693166c960a6" height="400"  alt="inicio de sesion" style="margin-right: 40px;"/>
+
+-> Lista de seguimiento
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/3eb3e262-effd-48df-be1e-cc83b7208055" height="400"  alt="inicio de sesion" style="margin-right: 40px;"/>
+
+-> Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas)
 
 ---
 

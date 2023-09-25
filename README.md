@@ -8,7 +8,7 @@ Algunas vistas:
 
 ### Primer pantalla: iniciar sesión o registro
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/32d08bb7-d757-4a02-b7d3-10b63c70a69f" height="400"  alt="login o registro"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afdcf9eb-4a52-4bcc-baec-fda978777d5e" height="400"  alt="login o registro"/>
 
 
 ### Segunda pantalla: iniciar sesión

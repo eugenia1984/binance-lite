@@ -65,13 +65,13 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 - Se puede filtrar por el nombre y elegir la criptomoneda para comprar y en el proximo paso ingresamos la cantidad
 
+- Elegimos le metodo de pago y tenemos un resumen de lo que sera la compra. Y luego completamos los datos de la tarjeta.
+  
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/ec4a5159-9078-4afb-ba7b-14f249071788" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1a265a4d-bb81-41d9-8b44-13d872b00feb" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/53714864-b502-41b3-8c03-c15fc10be63d" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
-
-- Elegimos le metodo de pago y tenemos un resumen de lo que sera la compra. Y luego completamos los datos de la tarjeta.
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1862a26a-d771-4ceb-b0d4-f297362f1aab" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 

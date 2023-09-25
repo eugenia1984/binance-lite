@@ -52,7 +52,31 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/3eb3e262-effd-48df-be1e-cc83b7208055" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-1er pantalla: Lista de monedas // 2da pantalla: Lista de seguimiento // 3ra pantalla: Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas)
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/13fedb69-8572-4b77-97e9-443d8bb8db49" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+
+1er pantalla: Lista de monedas // 2da pantalla: Lista de seguimiento // 3ra pantalla: Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas) // 4ta pantalla: desde el navbar podemos **comprar** y **vender** las criptomonedas
+
+### Pantalla de compra
+
+- Una vez que se elige desde el **navbar** la opción de **compra** se accede a la pantalla
+  
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b28560c6-b730-46ae-9507-3e3a5bda527b" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+- Se puede filtrar por el nombre y elegir la criptomoneda para comprar y en el proximo paso ingresamos la cantidad
+
+- Elegimos le metodo de pago y tenemos un resumen de lo que sera la compra. Y luego completamos los datos de la tarjeta.
+  
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/ec4a5159-9078-4afb-ba7b-14f249071788" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1a265a4d-bb81-41d9-8b44-13d872b00feb" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/53714864-b502-41b3-8c03-c15fc10be63d" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1862a26a-d771-4ceb-b0d4-f297362f1aab" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/9f5c5993-a487-4296-872f-b85cc5e026d7" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
 
 ---
 

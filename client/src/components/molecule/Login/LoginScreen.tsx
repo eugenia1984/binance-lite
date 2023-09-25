@@ -10,11 +10,12 @@ import toast, { Toaster } from 'react-hot-toast'
 import { toastStyleBgBlack } from '../../../utils/styles'
 import { useLoader } from '../../../context/LoaderProvider'
 import { loginStyle } from './loginStyle'
+import { randomPhone } from '../../../helpers/RandonName'
 
 const LoginScreen: React.FC = () => {
   const { addLoading, removeLoading } = useLoader()
   const auth = useAuth()
-  const { login } = auth
+  const { registerAuth, login } = auth
   const navigate = useNavigate()
 
   const [userOrEmail, setUserOrEmail] = useState<string>('')
@@ -66,27 +67,43 @@ const LoginScreen: React.FC = () => {
 
     try {
       addLoading()
-      const { data } = await axios.post(URL_LOGIN, { userOrEmail, password })
-      login(data.data) // Store the token in the localStorage
-
-      removeLoading()
+      const response = await axios.post(URL_LOGIN, { userOrEmail, password })
 
       // If is an invalid login, due to wrong userOrEmail or password, shows the alert
-      if (data.status === 'true' && data.message === 'Credenciales invalidas') {
+      if (response.data.status === 'true' && response.data.message === 'Credenciales invalidas') {
         toast.error(' Error al loguearte, verifica el correo y la contraseña')
         return
       }
 
       // If it's login ok, set email in localStorage and redirect to market
-      if (data.status === 'true' && data.message === 'Login Correcto') {
+      if (response.data.status === 'true' && response.data.message === 'Login Correcto') {
         toast.success(' Login Correcto. Redireccionando a Mercado.')
-        localStorage.setItem('userOrEmail', userOrEmail)
+
+        // set login
+        login({
+          userOrEmail: response.data.data.email,
+          password,
+          token: response.data.data.token
+        })
+
+        // set auth
+        registerAuth({
+          email: response.data.data.email,
+          password: password,
+          username: response.data.data.email.split("@")[0],
+          balance: response.data.data.balance,
+          celphone:  randomPhone(),
+        })
+
+        removeLoading()
         setTimeout(() => {
           navigate('/market')
         }, 5000)
       }
     } catch (error) {
       toast.error(`Error al loguearte: ${ error }`)
+    } finally {
+      removeLoading()
     }
   }
 

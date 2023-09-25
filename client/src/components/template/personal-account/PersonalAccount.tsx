@@ -83,12 +83,13 @@ const PersonalAccount: React.FC = () => {
       })
 
       if (response.data?.status === 'true') {
-        toast.success(`Bienvenido/a ${email}. Registro con Exito! Seras redireccionado/a al Login`)
+        toast.success(`Bienvenido/a ${ email }. Registro con Exito! Seras redireccionado/a al Login`)
+        registerAuth({ email, password, username, balance, celphone })
+
         setTimeout(() => {
           navigate("/login")
         }, 5000)
 
-        registerAuth({ email, password, username, balance, celphone })
       } else {
         toast.error('Error al registrarse. Por favor, intenta nuevamente más tarde.')
       }

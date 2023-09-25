@@ -1,4 +1,4 @@
-import MontoInput from '../components/molecule/BuyCard'
+import MontoInput from '../components/molecule/BuyCard/MontoInput'
 
 const BuyScreen = () => {
   <MontoInput />

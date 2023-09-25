@@ -13,16 +13,14 @@ import { toastStyleBgGreen } from '../../../utils/styles'
 const BuyCoin = () => {
   const { addLoading, removeLoading } = useLoader()
   const [coin, setCoin] = useState<CoinData | undefined>(undefined)
-
   const navigate = useNavigate()
-
   const id = localStorage.getItem('coinToBuy')
   const cantidad = localStorage.getItem('amountToBuy')
 
   const getCoinId = async () => {
     try {
       addLoading()
-      const response = await axios.get(`${URL_GET_CURRENCY_BY_ID}/${ id }`)
+      const response = await axios.get(`${ URL_GET_CURRENCY_BY_ID }/${ id }`)
       const coinData: CoinData = response.data
       setCoin(coinData)
     } catch (error) {
@@ -36,11 +34,23 @@ const BuyCoin = () => {
     getCoinId()
   }, [])
 
+  useEffect(() => {
+    if (coin) {
+      const { currentPrice } = coin
+      const newAmount = +(localStorage.getItem('balance')) + +currentPrice * +(localStorage.getItem('amountToBuy'))
+      console.log(newAmount)
+      // TODO: update the user with the new amount
+      // Update the key amount in the localStorage
+      localStorage.setItem('balance', newAmount.toString())
+    }
+  }, [coin])
+
   const handleCompraClick = () => {
-    toast.success('Compra realizada correctamente')
+    toast.success('Compra realizada correctamente. Aguarde que estamos llegando a Market.')
     // once the buy it's ok delete the localStorage
     localStorage.removeItem('coinToBuy')
     localStorage.removeItem('amountToBuy')
+    localStorage.removeItem('amount')
     setTimeout(() => {
       navigate('/wallets')
     }, 5000)

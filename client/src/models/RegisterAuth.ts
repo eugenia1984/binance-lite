@@ -3,8 +3,8 @@ export interface RegisterAuth {
   email?: string
   password: string
   username?: string
-  balance?: number
-  celphone?: number
+  balance?: string
+  celphone?: string
 }
 
 export interface LoginAuth {

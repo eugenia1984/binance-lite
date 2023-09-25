@@ -19,8 +19,8 @@ import AgregarTarjeta from './components/template/agregar-tarjeta/AgregarTarjeta
 import SalesCard from './components/molecule/salesCard'
 import PaymentMethod from './components/molecule/salesCard/PaymentMethod'
 import SellCoin from './components/template/sell-coin/SellCoin'
-import MontoInput from './components/molecule/BuyCard'
-import BuyPaymentMethod from './components/molecule/BuyCard/BuyPaymentMethod'
+import MontoInput from './components/molecule/BuyCard/MontoInput'
+import BuyPaymentMethod from './components/molecule/BuyCard/BuyPaymentMethod/BuyPaymentMethod'
 import BuyCoin from './components/template/buy-coin/BuyCoin'
 
 function App() {

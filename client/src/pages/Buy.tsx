@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container, Typography } from '@mui/material'
-import SearchBar from '../components/molecule/searchBar'
+import SearchBar from '../components/molecule/searchBar/SearchBar'
 import CoinsSellBuyTable from '../components/molecule/coins-table/CoinsSellBuyTable'
 import { useLocation } from 'react-router-dom'
 import { useApiContext } from '../context/FetchContext'

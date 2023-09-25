@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Alert, AlertTitle, Box, Container, InputLabel, Typography, TextField } from '@mui/material'
@@ -8,38 +8,29 @@ import useAuth from '../../../hooks/useAuth'
 import { emailRegex } from '../../../utils/constants'
 import { URL_REGISTER } from '../../../utils/url'
 import { randomPhone } from '../../../helpers/RandonName'
+import toast, { Toaster } from 'react-hot-toast'
+import { toastStyleBgBlack } from '../../../utils/styles'
+import { useLoader } from '../../../context/LoaderProvider'
 
 const PersonalAccount: React.FC = () => {
   const auth = useAuth()
   const { registerAuth } = auth
+  const { addLoading, removeLoading } = useLoader()
+  const navigate = useNavigate()
+
   const [email, setEmail] = useState<string>('')
   const [errorEmail, setErrorEmail] = useState<string | null>(null)
-
   const [password, setPassword] = useState<string>('')
   const [errorPassword, setErrorPassword] = useState<string | null>(null)
-
   const [username, setUsername] = useState<string>('')
   const [showPassword, setShowPassword] = useState<boolean>(false)
-  const [error, setError] = useState<boolean>(false)
-  const [message, setMessage] = useState({ text: '', msg: '' })
-  const [welcomeMessage, setWelcomeMessage] = useState({ text: '' })
-  const [showMessage, setShowMessage] = useState<boolean>(false)
 
   const balance = 0
   const celphone = randomPhone()
   const isValidEmail = emailRegex.test(email)
-  const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   if (email) {
-  //     const newUserName = email.split("@")[0]
-  //     setUsername(newUserName)
-  //   }
-  // }, [email])
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputEmail = e.target.value
-    const isValidEmail = emailRegex.test(inputEmail)
 
     if (isValidEmail) {
       setEmail(inputEmail)
@@ -51,23 +42,38 @@ const PersonalAccount: React.FC = () => {
       setEmail(inputEmail)
       setErrorEmail('X - Correo electrónico no válido')
     }
+  }
 
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputPassword = e.target.value
+
+    if (inputPassword.length > 6) {
+      setPassword(inputPassword)
+      setErrorPassword(null)
+    } else {
+      setPassword(inputPassword)
+      setErrorPassword('X - La contraseña es obligatoria y debe tener más de 6 caracteres')
+    }
+    setPassword(inputPassword)
+  }
+
+  const handleNextClick = () => {
+    if (!email) {
+      toast.error('El email es obligatorio')
+      return
+    }
+
+    setShowPassword(true)
   }
 
   const handleRegister = async () => {
     if (!password || password.length < 6) {
-      setError(true)
-      setMessage({
-        text: "El password es obligatorio y debe tener más de 6 caracteres",
-        msg: "password invalido",
-      })
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
+      toast.error('El password es obligatorio y debe tener más de 6 caracteres')
       return
     }
 
     try {
+      addLoading()
       const response = await axios.post(URL_REGISTER, {
         email,
         password,
@@ -76,63 +82,21 @@ const PersonalAccount: React.FC = () => {
         celphone,
       })
 
-      if (response) {
-        setWelcomeMessage({ text: "Bienvenido" })
-        setShowMessage(true)
+      if (response.data?.status === 'true') {
+        toast.success(`Bienvenido/a ${email}. Registro con Exito! Seras redireccionado/a al Login`)
         setTimeout(() => {
           navigate("/login")
-        }, 3000)
+        }, 5000)
 
         registerAuth({ email, password, username, balance, celphone })
       } else {
-        setError(true)
-        setMessage({
-          text: "Error al registrarse. Por favor, intenta nuevamente más tarde.",
-          msg: "Error de registro",
-        })
-        setTimeout(() => {
-          setError(false)
-        }, 3000)
+        toast.error('Error al registrarse. Por favor, intenta nuevamente más tarde.')
       }
     } catch (error) {
-      setError(true)
-      setMessage({
-        text: "Error al registrarse. Por favor, intenta nuevamente más tarde.",
-        msg: "Error de registro",
-      })
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
+      toast.error('Error al registrarse. Por favor, intenta nuevamente más tarde.')
+    } finally {
+      removeLoading()
     }
-  }
-
-  const handleNextClick = () => {
-    if ([email].includes("")) {
-      setError(true)
-      setMessage({
-        text: "El email es obligatorio",
-        msg: "Email",
-      });
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
-      return
-    }
-
-    if (!isValidEmail) {
-      setError(true)
-      setMessage({
-        text: "El email contiene caracteres invalidos",
-        msg: "Email invalido",
-      })
-
-      setTimeout(() => {
-        setError(false)
-      }, 3000)
-
-      return
-    }
-    setShowPassword(true)
   }
 
   if (!auth) { // if the context is not defined
@@ -147,6 +111,13 @@ const PersonalAccount: React.FC = () => {
   return (
     <main style={ PERSONAL_STYLES.main }>
       <Container maxWidth="sm" sx={ PERSONAL_STYLES.container }>
+        <Toaster
+          position="top-center"
+          toastOptions={ {
+            duration: 4000,
+            style: toastStyleBgBlack,
+          } }
+        />
         <Box sx={ PERSONAL_STYLES.boxContainer }>
           <Typography variant="h1" component="h2" sx={ PERSONAL_STYLES.title }>
             Crea tu cuenta
@@ -158,7 +129,7 @@ const PersonalAccount: React.FC = () => {
             <TextField
               type="text"
               id="register-email"
-              placeholder="Ingresa el correo electrónico"
+              placeholder="Ingresa el correo electrónico..."
               variant="filled"
               fullWidth
               value={ email }
@@ -167,32 +138,25 @@ const PersonalAccount: React.FC = () => {
               helperText={ errorEmail }
               sx={ { marginBottom: '20px' } }
             />
-            { error && (
-              <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                { message.text } — <strong>{ message.msg }</strong>
-              </Alert>
-            ) }
-            { showPassword && (
-              <TextField
-                id="register-password"
-                label="Contraseña"
-                variant="filled"
-                type="password"
-                style={ PERSONAL_STYLES.inputPassword }
-                value={ password }
-                onChange={ (e) => setPassword(e.target.value) }
-              />
-            ) }
-            { showMessage && (
-              <Alert severity="success">
-                <AlertTitle>Success</AlertTitle>
-                { welcomeMessage.text } —{ " " }
-                <strong>
-                  Registro con Exito! Seras redireccionado al Login
-                </strong>
-              </Alert>
-            ) }
+            { showPassword &&
+              <>
+                <InputLabel htmlFor="rregister-passwordl" sx={ PERSONAL_STYLES.label }>
+                  Contraseña
+                </InputLabel>
+                <TextField
+                  type="password"
+                  id="register-password"
+                  placeholder="Ingresa la contraseña..."
+                  variant="filled"
+                  fullWidth
+                  value={ password }
+                  onChange={ handlePassword }
+                  error={ Boolean(errorPassword) }
+                  helperText={ errorPassword }
+                  sx={ { marginBottom: '20px' } }
+                />
+              </>
+            }
             <Typography my={ 4 } gutterBottom>
               Al crear una cuenta, acepto las
               <Box component="span" sx={ PERSONAL_STYLES.textBold }>

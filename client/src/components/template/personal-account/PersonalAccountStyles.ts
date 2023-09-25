@@ -36,10 +36,6 @@ export const PERSONAL_STYLES = {
     textDecoration: 'none',
     marginBottom: '250px'
   },
-  inputPassword: {
-    width: "100%",
-    marginBottom: "20px"
-  },
   textFiled: {
     width: "100%",
     marginBottom: "20px"

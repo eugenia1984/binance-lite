@@ -14,7 +14,8 @@ const Header: React.FC = () => {
 
   const handleLogOut = () => {
     setIsLogueado(false)
-    if (token) localStorage.removeItem('token')
+    // If there is a token at localStorage delete all localStorage
+    if (token) localStorage.clear()
     navigate("/")
   }
 

@@ -77,9 +77,10 @@ const LoginScreen: React.FC = () => {
         return
       }
 
-      // If it's login ok redirect to market
+      // If it's login ok, set email in localStorage and redirect to market
       if (data.status === 'true' && data.message === 'Login Correcto') {
         toast.success(' Login Correcto. Redireccionando a Mercado.')
+        localStorage.setItem('userOrEmail', userOrEmail)
         setTimeout(() => {
           navigate('/market')
         }, 5000)
@@ -139,7 +140,7 @@ const LoginScreen: React.FC = () => {
           </>
         }
         <PrimaryButton
-          text={ !showPasswordInput ? "Siguiente" : "Iniciar sesión" }
+          text={ !showPasswordInput ? "SIGUIENTE" : "INICIAR SESIÓN" }
           ariaLabelText="Continuar con google"
           onClick={ showPasswordInput ? handleLoginClick : handleNextClick }
           sx={ { my: '20px' } }
@@ -152,7 +153,7 @@ const LoginScreen: React.FC = () => {
           ¿Aún no tenés una cuenta?
         </Typography>
         <PrimaryButton
-          text='Crear cuenta en Binance'
+          text='CREAR CUENTA EN BINANCE'
           ariaLabelText='Crear cuenta en Binance'
           variant="contained"
           color="secondary"

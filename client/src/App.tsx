@@ -6,7 +6,7 @@ import Market from './pages/Market'
 import Wallets from './pages/Wallets'
 import NotFound from './pages/NotFound'
 import CreatePersonalAccount from './pages/CreatePersonalAccount'
-import LoginView from './components/molecule/login'
+import LoginView from './components/molecule/login/LoginScreen'
 
 import { AuthProvider } from './context/AuthContext'
 import { ApiProvider } from './context/FetchContext'

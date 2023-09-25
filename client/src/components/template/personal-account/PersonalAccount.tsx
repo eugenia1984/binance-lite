@@ -5,7 +5,8 @@ import { Typography, Container, Box, TextField, Alert, AlertTitle } from '@mui/m
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { PERSONAL_STYLES } from './PersonalAccountStyles'
 import useAuth from '../../../hooks/useAuth'
-import { URL_REGISTER, emailRegex } from '../../../utils/constants'
+import {  emailRegex } from '../../../utils/constants'
+import { URL_REGISTER } from '../../../utils/url'
 import { randomPhone } from '../../../helpers/RandonName'
 
 const PersonalAccount: React.FC = () => {

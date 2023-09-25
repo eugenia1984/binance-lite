@@ -27,7 +27,7 @@ const LoginForm = () => {
           </Typography>
           <Box sx={ LOGIN_STYLES.btnContainer }>
             <PrimaryButton
-              text=" Regístrate"
+              text="  RESÍSTRATE"
               ariaLabelText="Regístrate"
               variant="contained"
               color="primary"
@@ -40,7 +40,7 @@ const LoginForm = () => {
             </Typography>
             <Typography sx={ LOGIN_STYLES.txtLink }>
               <PrimaryButton
-                text="Iniciar sesión"
+                text="  INICIAR SESIÓN"
                 ariaLabelText="Iniciar sesión"
                 variant="contained"
                 color="secondary"

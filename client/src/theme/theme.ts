@@ -90,28 +90,28 @@ export const binanceTheme = createTheme({
     h2: {
       fontSize: '24px',
       lineHeight: '32px',
-      fontWeight: 700,
+      fontWeight: '700',
       color: '#1E2329',
       margin: '18px auto'
     },
     h3: {
       fontSize: '18px',
       lineHeight: '24px',
-      fontWeight: 500,
+      fontWeight: '500',
       color: '#1E2329',
       margin: '0'
     },
     h4: {
       fontSize: '18px',
       lineHeight: '24px',
-      fontWeight: 500,
+      fontWeight: '500',
       color: '#1E2329',
       margin: '0'
     },
     h5: {
       fontSize: '15px',
       lineHeight: '21px',
-      fontWeight: 500,
+      fontWeight: '500',
       color: '#1E2329',
       margin: '0'
     },
@@ -119,26 +119,26 @@ export const binanceTheme = createTheme({
       fontFamily: 'Arial,sans-serif',
       fontSize: '12px',
       lineHeight: '16px',
-      fontWeight: 400,
+      fontWeight: '400',
       margin: '0'
     },
     body2: {
       fontFamily: 'Arial,sans-serif',
       fontSize: '10px',
       lineHeight: '14px',
-      fontWeight: 400,
+      fontWeight: '400',
       margin: '0'
     },
     caption: {
       fontFamily: 'Arial,sans-serif',
       fontSize: '11px',
       lineHeight: '15px',
-      fontWeight: 600
+      fontWeight: '600'
     },
     button: {
       fontSize: '16px',
       lineHeight: '24px',
-      fontWeight: 500,
+      fontWeight: '600',
       textTransform: 'none',
       margin: '0'
     },
@@ -178,7 +178,7 @@ export const binanceTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          fontSize: '20px',
+          fontSize: '22px',
           '&.Mui-error': {
             color: 'black'
           },
@@ -191,7 +191,7 @@ export const binanceTheme = createTheme({
     MuiFilledInput: {
       defaultProps: {
         disableUnderline: true,
-        size: 'small'
+        size: 'small',
       },
       styleOverrides: {
         root: ({ theme }) => ({
@@ -199,6 +199,7 @@ export const binanceTheme = createTheme({
           overflow: 'hidden',
           backgroundColor: '#FFFFFF',
           borderRadius: 16,
+          fontSize: '18px',
           transition: theme.transitions.create([
             'border-color',
             'background-color',
@@ -226,9 +227,9 @@ export const binanceTheme = createTheme({
         root: {
           fontStyle: 'normal',
           fontSize: '16px',
-          fontWeight: '500',
+          fontWeight: '600',
           lineHeight: '24px',
-          textDecoration: 'none',
+          textDecoration: 'uppercase',
           textAlign: 'center',
           cursor: 'pointer',
           overflow: 'hidden',
@@ -248,6 +249,7 @@ export const binanceTheme = createTheme({
           width: '100%'
         },
         text: {
+          textDecoration: 'uppercase',
           '&.Mui-focusVisible': {
             backgroundColor: '#095C3C',
           },
@@ -260,6 +262,7 @@ export const binanceTheme = createTheme({
         },
         outlined: {
           border: '2px solid',
+          textDecoration: 'uppercase',
           ':hover': {
             border: '2px solid',
             background: '#deb409',
@@ -274,6 +277,7 @@ export const binanceTheme = createTheme({
           }
         },
         containedPrimary: {
+          textDecoration: 'uppercase',
           background: 'rgb(252, 213, 53)',
           ':hover': {
             backgroundColor: 'rgb(252, 213, 53)',
@@ -287,6 +291,7 @@ export const binanceTheme = createTheme({
           }
         },
         containedSecondary: {
+          textDecoration: 'uppercase',
           background: 'rgb(234, 236, 239)',
           ':hover': {
             backgroundColor: 'rgb(245, 245, 245)'

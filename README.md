@@ -63,9 +63,13 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
   
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b28560c6-b730-46ae-9507-3e3a5bda527b" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-- Se puede filtrar por el nombre
+- Se puede filtrar por el nombre y elegir la criptomoneda para comprar y en el proximo paso ingresamos la cantidad
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/ec4a5159-9078-4afb-ba7b-14f249071788" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1a265a4d-bb81-41d9-8b44-13d872b00feb" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/53714864-b502-41b3-8c03-c15fc10be63d" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 
 

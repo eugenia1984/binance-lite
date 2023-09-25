@@ -8,7 +8,7 @@ Algunas vistas:
 
 ### Pantalla inicial: iniciar sesión o registro
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afdcf9eb-4a52-4bcc-baec-fda978777d5e" height="400"  alt="login o registro"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afdcf9eb-4a52-4bcc-baec-fda978777d5e" height="320"  alt="login o registro"/>
 
 
 ### Pantalla de Registro
@@ -17,22 +17,22 @@ Algunas vistas:
 
 - Siempre se va informando al usuario de los errores, para poder corregirlos y completar con exito el registro.
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/c292269a-eb74-4c8f-b38f-4dd9dbc6cc48" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/c292269a-eb74-4c8f-b38f-4dd9dbc6cc48" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6b2b5e4a-7c7f-4df5-8ada-7d078cd67279" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6b2b5e4a-7c7f-4df5-8ada-7d078cd67279" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afd162b8-a02d-4229-993a-c497e27b0e19" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afd162b8-a02d-4229-993a-c497e27b0e19" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 
 ### Pantalla de Inicio de sesión
 
 Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/d9726fdb-e4bd-499c-ab0f-e7bf2fd2f86b" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/d9726fdb-e4bd-499c-ab0f-e7bf2fd2f86b" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/97c31ebd-9b0f-4d22-bcd6-12b9391a7e54" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/97c31ebd-9b0f-4d22-bcd6-12b9391a7e54" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b49f2fe6-658a-4265-997f-a388cd7f17bb" height="400"  alt="inicio de sesion"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b49f2fe6-658a-4265-997f-a388cd7f17bb" height="320"  alt="inicio de sesion"/>
 
 
 ## Pantalla: Mercado (/market)
@@ -45,12 +45,12 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 ... tenemos la tabla para ver a los que venimos siguiendo en **Lista de seguimiento** y podemos ver todas las criptomonedas en **Monedas**
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b2992213-3793-49e7-80d9-ca2b8edd1c24" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/b2992213-3793-49e7-80d9-ca2b8edd1c24" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/a7e02ba8-fe1f-4cb2-860b-693166c960a6" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/a7e02ba8-fe1f-4cb2-860b-693166c960a6" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/3eb3e262-effd-48df-be1e-cc83b7208055" height="400"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/3eb3e262-effd-48df-be1e-cc83b7208055" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 1er pantalla: Lista de monedas // 2da pantalla: Lista de seguimiento // 3ra pantalla: Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas)
 

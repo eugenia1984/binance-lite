@@ -9,6 +9,7 @@ import AuthContext from '../../../context/AuthContext'
 const HeroMarket = () => {
   const [isAmountVisible, setIsAmountVisible] = useState(true)
   const { loginAuth } = useContext(AuthContext)
+  const userOrEmail = localStorage.getItem('userOrEmail')
 
   const handleVisibilityToggle = () => {
     setIsAmountVisible((prevIsAmountVisible) => !prevIsAmountVisible)
@@ -16,23 +17,22 @@ const HeroMarket = () => {
 
   const showAmount = () => {
     if (!isAmountVisible) return '**********'
-    if (isAmountVisible)  return loginAuth?.balance === undefined ? '0.00' : loginAuth?.balance
+    if (isAmountVisible) return loginAuth?.balance === undefined ? '0.00' : loginAuth?.balance
   }
 
   return (
     <>
-      <Grid item xs={ 12 }>
-        <Typography sx={ HERO_MARKET_STYLES.saldoEmail }>
-         Bienvenido/a  { loginAuth?.email }
-        </Typography>
-      </Grid>
+      { userOrEmail &&
+        <Grid item xs={ 12 }>
+          <Typography sx={ HERO_MARKET_STYLES.saldoEmail }>
+            Bienvenido/a  { userOrEmail }
+          </Typography>
+        </Grid>
+      }
       <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ HERO_MARKET_STYLES.container }>
         <Grid container sx={ HERO_MARKET_STYLES.containerSaldo }>
           <Grid item xs={ 12 } sx={ HERO_MARKET_STYLES.saldoText }>
-            <Typography
-              component="h2"
-              sx={ { fontSize: '24px', fontWeight: '700' } }
-            >
+            <Typography component="h2" sx={ HERO_MARKET_STYLES.saldoTotal }>
               Saldo total
             </Typography>
             <Box

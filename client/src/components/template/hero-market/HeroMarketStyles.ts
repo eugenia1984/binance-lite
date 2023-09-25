@@ -6,7 +6,7 @@ export const HERO_MARKET_STYLES = {
     alignContent: 'space-around',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '20px'
+    margin: '20px auto'
   },
   containerSaldo: {
     background: '#fff',
@@ -37,5 +37,9 @@ export const HERO_MARKET_STYLES = {
     fontSize: '22px',
     fontWeight: '600',
     textAlign: 'center'
+  },
+  saldoTotal: {
+    fontSize: '24px',
+    fontWeight: '700'
   }
 }

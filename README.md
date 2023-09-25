@@ -26,7 +26,7 @@ Algunas vistas:
 
 ### Pantalla de Inicio de sesión
 
-Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroreas y también s epuede apreciar el efecto de loader que realizamos para mostrar cada vez que se realiza alguna petición.
+- Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroneas.
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/d9726fdb-e4bd-499c-ab0f-e7bf2fd2f86b" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 

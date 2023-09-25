@@ -22,7 +22,7 @@ const Market: React.FC = () => {
       >
         <HeroMarket />
       </Grid>
-      <Grid container maxWidth="lg" sx={ { margin: '0 auto' } }>
+      <Grid container maxWidth="lg" sx={ { margin: '0 auto', width: '96%' } }>
         <TabsMarket />
       </Grid>
     </main>

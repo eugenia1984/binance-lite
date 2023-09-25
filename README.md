@@ -38,7 +38,7 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/3eb3e262-effd-48df-be1e-cc83b7208055" height="400"  alt="inicio de sesion" style="margin-right: 40px;"/>
 
- Lista de monedas / Lista de seguimiento / Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas)
+1er pantalla: Lista de monedas // 2da pantalla: Lista de seguimiento // 3ra pantalla: Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas)
 
 ---
 

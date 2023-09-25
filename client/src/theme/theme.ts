@@ -305,6 +305,16 @@ export const binanceTheme = createTheme({
         },
       }
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          background: 'rgba(252, 213, 53, 0.2)',
+          borderTop: '1px solid rgb(234, 236, 239)',
+          borderLeft: '1px solid rgb(234, 236, 239)',
+          borderRight: '1px solid rgb(234, 236, 239)'
+        }
+      }
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {
@@ -328,7 +338,7 @@ export const binanceTheme = createTheme({
       styleOverrides: {
         root: {
           ":nth-of-type(odd)": {
-            background: 'rgba(231,233,247,0.4)',
+            background: 'rgba(252, 213, 53, 0.2)',
           }
         },
         head: {
@@ -363,7 +373,7 @@ export const binanceTheme = createTheme({
             },
           },
           '& .Mui-focusVisible': {
-            backgroundColor: '#1226AA',
+            backgroundColor: 'rgba(252, 213, 53, 0.3)',
             color: '#F1F2FA',
 
           },

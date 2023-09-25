@@ -45,9 +45,19 @@ export default function TabsMarket() {
     return (
         <Box sx={ { width: '100%' } }>
             <Box sx={ { borderBottom: 1, borderColor: 'divider' } }>
-                <Tabs value={ value } onChange={ handleChange } aria-label="basic tabs example">
-                    <Tab label="Lista de seguimiento" { ...a11yProps(0) } />
-                    <Tab label="Moneda" { ...a11yProps(1) } />
+                <Tabs
+                    value={ value }
+                    onChange={ handleChange }
+                    aria-label="basic tabs example"
+                >
+                    <Tab
+                        label="Lista de seguimiento" { ...a11yProps(0) }
+                        sx={ { background: 'rgba(252, 213, 53, 0.1)' } }
+                    />
+                    <Tab
+                        label="Monedas" { ...a11yProps(1) }
+                        sx={ { background: 'rgba(252, 213, 53, 0.1)' } }
+                    />
                 </Tabs>
             </Box>
             <CustomTabPanel value={ value } index={ 0 }>
@@ -56,6 +66,6 @@ export default function TabsMarket() {
             <CustomTabPanel value={ value } index={ 1 }>
                 <MarketComponent />
             </CustomTabPanel>
-        </Box>
+        </Box >
     )
 }

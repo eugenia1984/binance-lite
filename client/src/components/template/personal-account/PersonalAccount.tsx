@@ -6,7 +6,7 @@ import PrimaryButton from '../../atom/buttons/PrimaryButton'
 import { PERSONAL_STYLES } from './PersonalAccountStyles'
 import useAuth from '../../../hooks/useAuth'
 import { emailRegex } from '../../../utils/constants'
-import { URL_REGISTER } from '../../../utils/url'
+import { URL_USER_REGISTER } from '../../../utils/url'
 import { randomPhone } from '../../../helpers/RandonName'
 import toast, { Toaster } from 'react-hot-toast'
 import { toastStyleBgBlack } from '../../../utils/styles'
@@ -74,7 +74,7 @@ const PersonalAccount: React.FC = () => {
 
     try {
       addLoading()
-      const response = await axios.post(URL_REGISTER, {
+      const response = await axios.post(URL_USER_REGISTER, {
         email,
         password,
         username,

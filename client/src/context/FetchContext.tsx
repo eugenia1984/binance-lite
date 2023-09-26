@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useLoader } from '../context/LoaderProvider'
 import { CoinData } from '../models/CoinDataResponse'
-import { URL_GET_ALL_CRIPTOCURRENCIES } from '../utils/url'
+import { URL_ALL_CRYPTOCURRENCIES } from '../utils/url'
 interface ApiContextType {
     coinsData: CoinData[]
     fetchData: () => void
@@ -21,7 +21,7 @@ export const ApiProvider: React.FC<ChildrenApiProps> = ({ children
     const fetchData = async () => {
         try {
             addLoading()
-            const response = await fetch(URL_GET_ALL_CRIPTOCURRENCIES)
+            const response = await fetch(URL_ALL_CRYPTOCURRENCIES)
             if (response.ok) {
                 const dataReponse = await response.json()
 

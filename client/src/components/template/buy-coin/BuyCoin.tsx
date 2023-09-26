@@ -7,7 +7,7 @@ import { useLoader } from '../../../context/LoaderProvider'
 import { BUY_COIN } from './BuyCoinStyles'
 import { getAmountToPaid, getSrcImg } from '../../../utils/strings'
 import toast, { Toaster } from 'react-hot-toast'
-import { URL_GET_CURRENCY_BY_ID } from '../../../utils/url'
+import { URL_CRYPTOCURRENCY_BY_ID } from '../../../utils/url'
 import { toastStyleBgGreen } from '../../../utils/styles'
 
 const BuyCoin = () => {
@@ -20,7 +20,7 @@ const BuyCoin = () => {
   const getCoinId = async () => {
     try {
       addLoading()
-      const response = await axios.get(`${ URL_GET_CURRENCY_BY_ID }/${ id }`)
+      const response = await axios.get(`${ URL_CRYPTOCURRENCY_BY_ID }/${ id }`)
       const coinData: CoinData = response.data
       setCoin(coinData)
     } catch (error) {
@@ -38,7 +38,6 @@ const BuyCoin = () => {
     if (coin) {
       const { currentPrice } = coin
       const newAmount = +(localStorage.getItem('balance')) + +currentPrice * +(localStorage.getItem('amountToBuy'))
-      console.log(newAmount)
       // TODO: update the user with the new amount
       // Update the key amount in the localStorage
       localStorage.setItem('balance', newAmount.toString())
@@ -50,7 +49,6 @@ const BuyCoin = () => {
     // once the buy it's ok delete the localStorage
     localStorage.removeItem('coinToBuy')
     localStorage.removeItem('amountToBuy')
-    localStorage.removeItem('amount')
     setTimeout(() => {
       navigate('/wallets')
     }, 5000)

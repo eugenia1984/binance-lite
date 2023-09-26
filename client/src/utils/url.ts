@@ -1,17 +1,26 @@
 /* URLs*/
 
+/************************ User ********************************/
 // To register a new user 
-export const URL_REGISTER = "https://binance-production.up.railway.app/api/v1/users/register"
+export const URL_USER_REGISTER = "https://binance-production.up.railway.app/api/v1/users/register"
+
+
+// To update, find or delete a user by id
+// Need to add '/{userId}
+// To UPDATE ->PUT, to FIND -> GET and to DELETE -> DELETE
+export const URL_USER_BY_ID = "https://binance-production.up.railway.app/api/v1/users"
 
 // To login in the app with email or telephone and password
-export const URL_LOGIN= "https://binance-production.up.railway.app/api/v1/auth/login"
+export const URL_USER_LOGIN = "https://binance-production.up.railway.app/api/v1/auth/login"
 
+/******************* cryptocurrencies ***************************/
 // To find a crypto currency by uuid, need to add '/id'
-export const URL_GET_CURRENCY_BY_ID = "https://binance-production.up.railway.app/api/v1/cryptocurrencies"
+export const URL_CRYPTOCURRENCY_BY_ID = "https://binance-production.up.railway.app/api/v1/cryptocurrencies"
 
 // To get the list of all the cryptocurrencies
-export const URL_GET_ALL_CRIPTOCURRENCIES = "https://binance-production.up.railway.app/api/v1/cryptocurrencies"
+export const URL_ALL_CRYPTOCURRENCIES = "https://binance-production.up.railway.app/api/v1/cryptocurrencies"
 
+/************************ Favorites ******************************/
 // To get the favorites cryptocurrencies by user id
 // The complete URL is'https://binance-production.up.railway.app/api/v1/user-favorites/list-favorites/{userID}'
 // '/userID', is the user id

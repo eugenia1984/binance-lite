@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { CoinData } from '../../../models/CoinDataResponse'
 import { useNavigate } from 'react-router-dom'
-import { URL_GET_CURRENCY_BY_ID } from '../../../utils/url'
+import { URL_CRYPTOCURRENCY_BY_ID } from '../../../utils/url'
 
 const SellCoin = () => {
   const [coin, setCoin] = useState<CoinData | undefined>(undefined)
@@ -18,7 +18,7 @@ const SellCoin = () => {
 
   const getCoinId = async () => {
     try {
-      const response = await axios.get(`${ URL_GET_CURRENCY_BY_ID }/${ id }`)
+      const response = await axios.get(`${ URL_CRYPTOCURRENCY_BY_ID }/${ id }`)
       const coinData: CoinData = response.data
       setCoin(coinData)
     } catch (error) {

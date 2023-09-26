@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container, InputLabel, TextField, Typography } from '@mui/material'
 import PrimaryButton from '../../atom/buttons/PrimaryButton'
-import { URL_LOGIN } from '../../../utils/url'
+import { URL_USER_LOGIN } from '../../../utils/url'
 import { emailRegex } from '../../../utils/constants'
 import useAuth from '../../../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast'
@@ -67,7 +67,7 @@ const LoginScreen: React.FC = () => {
 
     try {
       addLoading()
-      const response = await axios.post(URL_LOGIN, { userOrEmail, password })
+      const response = await axios.post(URL_USER_LOGIN, { userOrEmail, password })
 
       // If is an invalid login, due to wrong userOrEmail or password, shows the alert
       if (response.data.status === 'true' && response.data.message === 'Credenciales invalidas') {

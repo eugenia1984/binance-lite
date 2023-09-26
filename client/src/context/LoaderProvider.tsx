@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import { Backdrop, Box } from '@mui/material'
 import useLoading from '../hooks/useLoading'
 import LoadingBars from '../components/atom/LoadingBars'
@@ -14,7 +14,7 @@ interface AppContextProps {
 }
 
 type LoaderProviderProps = {
-  children: JSX.Element
+  children: React.JSX.Element
 }
 
 export const LoaderContext = createContext<AppContextProps>(defaultContext)

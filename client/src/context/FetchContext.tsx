@@ -13,7 +13,8 @@ interface ChildrenApiProps {
 
 const ApiContext = createContext<ApiContextType | undefined>(undefined)
 
-export const ApiProvider: React.FC<ChildrenApiProps> = ({ children
+export const ApiProvider: React.FC<ChildrenApiProps> = ({ 
+    children
 }) => {
     const [coinsData, setCoinsData] = useState<CoinData[]>([])
     const { addLoading, removeLoading } = useLoader()

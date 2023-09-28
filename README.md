@@ -80,7 +80,7 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 ## Pantalla: Cartera 
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6a33e734-9891-47a1-92ef-824a288af530" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6a33e734-9891-47a1-92ef-824a288af530" height="420"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 
 

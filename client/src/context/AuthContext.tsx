@@ -3,7 +3,7 @@ import { LoginAuth, RegisterAuth } from '../models/RegisterAuth'
 
 interface Auth {
   auth: RegisterAuth
-  registerAuth: ({ email, password, username, balance, celphone }) => void
+  registerAuth: (data: RegisterAuth) => Promise<void>
   login: ({ userOrEmail, password, token }) => void
   favoritesList: any[] // almacenarán las monedas favoritas
   setFavoritesList: (list: any[]) => void, // actualizar la lista de favoritos
@@ -33,9 +33,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [favoritesList, setFavoritesList] = useState<any[]>([]) // estado para las monedas favoritas
 
   const registerAuth = async (data: RegisterAuth) => {
-    localStorage.setItem('username', data.username)
-    localStorage.setItem('balance', data.balance.toString())
-
     setauth((prevState) => ({
       ...prevState,
       ...data,

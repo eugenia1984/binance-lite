@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import Slider from '../../atom/swiper/Slider'
 import { HERO_MARKET_STYLES } from './HeroMarketStyles'
-import AuthContext from '../../../context/AuthContext'
 
 const HeroMarket = () => {
   const [isAmountVisible, setIsAmountVisible] = useState(true)
-  const { loginAuth } = useContext(AuthContext)
   const userOrEmail = localStorage.getItem('userOrEmail')
+  const balance = localStorage.getItem('balance')
 
   const handleVisibilityToggle = () => {
     setIsAmountVisible((prevIsAmountVisible) => !prevIsAmountVisible)
@@ -17,7 +16,7 @@ const HeroMarket = () => {
 
   const showAmount = () => {
     if (!isAmountVisible) return '**********'
-    if (isAmountVisible) return loginAuth?.balance === undefined ? '0.00' : loginAuth?.balance
+    if (isAmountVisible) return balance ?? '0.00'
   }
 
   return (

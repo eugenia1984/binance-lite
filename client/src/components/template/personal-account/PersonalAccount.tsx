@@ -84,14 +84,19 @@ const PersonalAccount: React.FC = () => {
 
       if (response.data?.status === 'true') {
         toast.success(`Bienvenido/a ${ email }. Registro con Exito! Seras redireccionado/a al Login`)
-        registerAuth({ email, password, username, balance, celphone })
-
+        // TODO: ver bien como setearlo bien o con zustand o en el contet
+        registerAuth({ email, password, username, balance: balance.toString(), celphone })
+        localStorage.setItem('balance', response.data?.data.balance)
+        localStorage.setItem('email', response.data?.data.email)
+        localStorage.setItem('id', response.data?.data.id)
+        localStorage.setItem('username', response.data?.data.username)
+        
         setTimeout(() => {
           navigate("/login")
-        }, 5000)
+        }, 6000)
 
       } else {
-        toast.error('Error al registrarse. Por favor, intenta nuevamente más tarde.')
+        toast.error(`Error al registrarse: ${ response.data?.message }. Por favor, intenta nuevamente.`)
       }
     } catch (error) {
       toast.error('Error al registrarse. Por favor, intenta nuevamente más tarde.')
@@ -114,10 +119,7 @@ const PersonalAccount: React.FC = () => {
       <Container maxWidth="sm" sx={ PERSONAL_STYLES.container }>
         <Toaster
           position="top-center"
-          toastOptions={ {
-            duration: 4000,
-            style: toastStyleBgBlack,
-          } }
+          toastOptions={ { duration: 5000, style: toastStyleBgBlack } }
         />
         <Box sx={ PERSONAL_STYLES.boxContainer }>
           <Typography variant="h1" component="h2" sx={ PERSONAL_STYLES.title }>

@@ -92,8 +92,13 @@ const LoginScreen: React.FC = () => {
           password: password,
           username: response.data.data.email.split("@")[0],
           balance: response.data.data.balance,
-          celphone:  randomPhone(),
+          celphone: randomPhone(),
         })
+
+        localStorage.setItem('balance', response.data?.data.balance)
+        localStorage.setItem('email', response.data?.data.email)
+        localStorage.setItem('id', response.data?.data.id)
+        localStorage.setItem('username', response.data?.data.username)
 
         removeLoading()
         setTimeout(() => {

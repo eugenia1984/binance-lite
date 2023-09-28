@@ -9,11 +9,16 @@ import { getAmountToPaid, getSrcImg } from '../../../utils/strings'
 import toast, { Toaster } from 'react-hot-toast'
 import { URL_CRYPTOCURRENCY_BY_ID } from '../../../utils/url'
 import { toastStyleBgGreen } from '../../../utils/styles'
+import useAuth from '../../../hooks/useAuth'
 
 const BuyCoin = () => {
   const { addLoading, removeLoading } = useLoader()
-  const [coin, setCoin] = useState<CoinData | undefined>(undefined)
+  const auth = useAuth()
+  const { registerAuth } = auth
   const navigate = useNavigate()
+
+  const [coin, setCoin] = useState<CoinData | undefined>(undefined)
+
   const id = localStorage.getItem('coinToBuy')
   const cantidad = localStorage.getItem('amountToBuy')
 
@@ -39,6 +44,7 @@ const BuyCoin = () => {
       const { currentPrice } = coin
       const newAmount = +(localStorage.getItem('balance')) + +currentPrice * +(localStorage.getItem('amountToBuy'))
       // TODO: update the user with the new amount
+      registerAuth({ balance: newAmount.toString() })
       // Update the key amount in the localStorage
       localStorage.setItem('balance', newAmount.toString())
     }

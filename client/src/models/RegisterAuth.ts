@@ -1,7 +1,7 @@
 export interface RegisterAuth {
   id?: string,
   email?: string
-  password: string
+  password?: string
   username?: string
   balance?: string
   celphone?: string

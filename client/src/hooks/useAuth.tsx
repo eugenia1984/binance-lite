@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from 'react'
 import AuthContext from '../context/AuthContext'
+import { RegisterAuth } from '../models/RegisterAuth'
 
 interface AuthMethods {
-  registerAuth: ({ email, password, username, balance, celphone }) => void
+  registerAuth: (data: RegisterAuth) => Promise<void>
   login: ({ userOrEmail, password, token }) => void
   isLogueado?: boolean
   setIsLogueado?: React.Dispatch<React.SetStateAction<boolean>>,

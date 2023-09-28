@@ -12,7 +12,6 @@ import { AuthProvider } from './context/AuthContext'
 import { ApiProvider } from './context/FetchContext'
 import Sales from './pages/Sell'
 import Buy from './pages/Buy'
-import { GoogleAuthContextProvider } from './context/googleContext'
 import Header from './components/molecule/header/Header'
 import Deposit from './pages/Deposit'
 import AgregarTarjeta from './components/template/agregar-tarjeta/AgregarTarjeta'
@@ -26,7 +25,6 @@ import BuyCoin from './components/template/buy-coin/BuyCoin'
 function App() {
   return (
     <HashRouter>
-      <GoogleAuthContextProvider>
         <AuthProvider>
           <ApiProvider>
             <Header />
@@ -52,7 +50,6 @@ function App() {
           </ApiProvider>
           <Footer />
         </AuthProvider>
-      </GoogleAuthContextProvider>
     </HashRouter>
   )
 }

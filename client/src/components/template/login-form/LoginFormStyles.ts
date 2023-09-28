@@ -2,7 +2,7 @@ export const LOGIN_STYLES = {
   container: {
     display: 'flex',
     alignContent: 'center',
-    margin: '2rem auto 3rem',
+    margin: '5rem auto 3rem',
   },
   box: {
     width: '100%',

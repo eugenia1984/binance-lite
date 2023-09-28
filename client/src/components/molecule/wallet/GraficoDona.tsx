@@ -1,11 +1,10 @@
 import React from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
-import { Typography } from '@mui/material'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-export const data = {
+const data = {
     labels: ['Etherium', 'Bitcoin', 'Tether', 'Cardano', 'Dogecoin'],
     datasets: [
         {
@@ -32,10 +31,8 @@ export const data = {
 
 const GraficoDona: React.FC = () => {
     return (
-        <>
-            <Doughnut data={ data } />
-        </>
-
+        <Doughnut data={ data } />
     )
 }
+
 export default GraficoDona

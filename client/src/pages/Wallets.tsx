@@ -13,10 +13,23 @@ const Wallets: React.FC = () => {
   const userOrEmail = localStorage.getItem('userOrEmail')
   const { coinsData } = useApiContext()
 
+  const itemGraficoDona = {
+    height: { xs: '300px', sm: '400px' },
+    width: { xs: '300px', sm: '400px' },
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '2rem 0 3rem'
+  }
+
+  const itemGraficoArea = {
+    height: { xs: '350px', sm: '480px' },
+    margin: '2rem auto'
+  }
+
   return (
     <Container maxWidth="sm" sx={ { margin: '1rem auto 150px', minHeight: '82vh' } }>
       { userOrEmail &&
-        <Typography variant="h2" sx={ { marginBottom: '24px', fontSize: '20px' } } >
+        <Typography variant="h2" sx={ { marginBottom: '24px', fontSize: '18px' } } >
           Bienvenido/a { userOrEmail }
         </Typography>
       }
@@ -55,9 +68,17 @@ const Wallets: React.FC = () => {
             <DataUsageIcon />
           </Button>
         </Grid>
+        { showArea &&
+          <Grid item xs={ 12 } sx={ itemGraficoArea } >
+            <GraficoArea />
+          </Grid>
+        }
+        { !showArea &&
+          <Grid item xs={ 12 } sx={ itemGraficoDona }>
+            <GraficoDona />
+          </Grid>
+        }
       </Grid>
-      { showArea && <GraficoArea /> }
-      { !showArea && <GraficoDona /> }
       <CoinsSellBuyTable
         urlPathName="/sell"
         btnText="vender"

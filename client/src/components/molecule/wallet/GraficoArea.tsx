@@ -12,8 +12,9 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { faker } from '@faker-js/faker'
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import { labels, labelsB } from '../../../utils/constants'
+import { GRAFICO_AREA_STYLES } from './GraficoAreaStyles'
 
 interface ContextType {
     type: string
@@ -31,29 +32,25 @@ ChartJS.register(
     Legend
 )
 
-export const options = {
+const options = {
     responsive: true,
-    scales: {
-        y: { min: 0 }
-    },
+    scales: { y: { min: 0 } },
     plugins: {
         legend: { display: false, },
         title: {},
     },
 }
 
-export const optionsB = {
+const optionsB = {
     responsive: true,
-    scales: {
-        y: { min: 0 }
-    },
+    scales: { y: { min: 0 } },
     plugins: {
         legend: { display: false },
         title: {},
     },
 }
 
-export const data = {
+const data = {
     labels,
     datasets: [
         {
@@ -82,7 +79,7 @@ export const data = {
 };
 
 
-export const datab = {
+const datab = {
     labels: labelsB,
     datasets: [
         {
@@ -111,21 +108,15 @@ export const datab = {
 };
 
 const GraficoArea: React.FC = () => {
-    const [showArea, setShowArea] = useState(true);
+    const [showArea, setShowArea] = useState(true)
 
     return (
         <>
-            { showArea && <Line options={ options } data={ data } /> }
-            { !showArea && <Line options={ optionsB } data={ datab } /> }
-            <Box
-                sx={ {
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                    my: '2rem',
-                    gap: '24px'
-                } }
-            >
+            <Box sx={ { height: { xs: '220px', sm: '340px' } } }>
+                { showArea && <Line options={ options } data={ data } /> }
+                { !showArea && <Line options={ optionsB } data={ datab } /> }
+            </Box>
+            <Box sx={ GRAFICO_AREA_STYLES.boxBtn } >
                 <Button
                     onClick={ () => setShowArea(true) }
                     disabled={ showArea }
@@ -147,9 +138,6 @@ const GraficoArea: React.FC = () => {
             </Box>
         </>
     )
-
-
-
 }
 
 

@@ -4,7 +4,8 @@ export const FOOTER_STYLES = {
     margin: '0 auto',
     position: 'fixed',
     bottom: '0',
-    background: '#fff'
+    background: '#fff',
+    zIndex: '10'
   },
   gridYear: {
     display: {

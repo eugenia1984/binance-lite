@@ -5,8 +5,6 @@ interface Auth {
   auth: RegisterAuth
   registerAuth: (data: RegisterAuth) => Promise<void>
   login: ({ userOrEmail, password, token }) => void
-  favoritesList: any[] // almacenarán las monedas favoritas
-  setFavoritesList: (list: any[]) => void, // actualizar la lista de favoritos
   loginAuth: LoginAuth
 }
 
@@ -30,7 +28,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const [auth, setauth] = useState<RegisterAuth>(initialAuthValues)
   const [loginAuth, setLoginAuth] = useState<LoginAuth>(initialLoginAutnValues)
-  const [favoritesList, setFavoritesList] = useState<any[]>([]) // estado para las monedas favoritas
 
   const registerAuth = async (data: RegisterAuth) => {
     setauth((prevState) => ({
@@ -55,8 +52,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         auth,
         registerAuth,
         login,
-        favoritesList,
-        setFavoritesList,
         loginAuth
       } }
     >

@@ -21,12 +21,14 @@ import SellCoin from './components/template/sell-coin/SellCoin'
 import MontoInput from './components/molecule/BuyCard/MontoInput'
 import BuyPaymentMethod from './components/molecule/BuyCard/BuyPaymentMethod/BuyPaymentMethod'
 import BuyCoin from './components/template/buy-coin/BuyCoin'
+import { FavoriteCoinProvider } from './context/FavoriteCoinContext'
 
 function App() {
   return (
     <HashRouter>
-        <AuthProvider>
-          <ApiProvider>
+      <AuthProvider>
+        <ApiProvider>
+          <FavoriteCoinProvider>
             <Header />
             <Routes>
               <Route path="/" element={ <Login /> } />
@@ -47,9 +49,10 @@ function App() {
               <Route path="/register/continue" element={ <CreatePersonalAccount /> } />
               <Route path="*" element={ <NotFound /> } />
             </Routes>
-          </ApiProvider>
-          <Footer />
-        </AuthProvider>
+          </FavoriteCoinProvider>
+        </ApiProvider>
+        <Footer />
+      </AuthProvider>
     </HashRouter>
   )
 }

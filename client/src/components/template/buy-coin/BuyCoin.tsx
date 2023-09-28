@@ -43,7 +43,6 @@ const BuyCoin = () => {
     if (coin) {
       const { currentPrice } = coin
       const newAmount = +(localStorage.getItem('balance')) + +currentPrice * +(localStorage.getItem('amountToBuy'))
-      // TODO: update the user with the new amount
       registerAuth({ balance: newAmount.toString() })
       // Update the key amount in the localStorage
       localStorage.setItem('balance', newAmount.toString())

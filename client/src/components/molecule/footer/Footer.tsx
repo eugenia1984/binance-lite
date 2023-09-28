@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
         flexWrap: 'wrap',
         alignContent: 'center',
         justifyContent: 'center'
-      } }
+      }  }
     >
       <Grid container maxWidth="lg" sx={ FOOTER_STYLES.container } >
         { token &&

@@ -6,12 +6,12 @@ Entendemos que el mundo del trading puede resultar complicado y abrumador para a
 
 Algunas vistas:
 
-### Pantalla inicial: iniciar sesión o registro
+## Pantalla inicial: iniciar sesión o registro
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afdcf9eb-4a52-4bcc-baec-fda978777d5e" height="320"  alt="login o registro"/>
 
 
-### Pantalla de Registro
+## Pantalla de Registro
 
 - El usuario se registra con **correo electrónico** y **contraseña**.
 
@@ -24,7 +24,7 @@ Algunas vistas:
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/afd162b8-a02d-4229-993a-c497e27b0e19" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 
-### Pantalla de Inicio de sesión
+## Pantalla de Inicio de sesión
 
 - Siempre se le informa al usuario si hay errores al completar, si ocurre algún errores al hacer la acción, como en la segunda imagen que se informa que el correo o la contraseña son erroneas.
 
@@ -57,7 +57,7 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 1er pantalla: Lista de monedas // 2da pantalla: Lista de seguimiento // 3ra pantalla: Desde el listado de monedas se puede agregar o sacar de la lista de seguimiento (las criptomonedas favoritas) // 4ta pantalla: desde el navbar podemos **comprar** y **vender** las criptomonedas
 
-### Pantalla de compra
+## Pantalla de compra
 
 - Una vez que se elige desde el **navbar** la opción de **compra** se accede a la pantalla
   
@@ -76,6 +76,12 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/1862a26a-d771-4ceb-b0d4-f297362f1aab" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/9f5c5993-a487-4296-872f-b85cc5e026d7" height="320"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
+
+## Pantalla: Cartera 
+
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6a33e734-9891-47a1-92ef-824a288af530" height="420"  alt="inicio de sesion" style="margin-right: 80px;"/>
+
 
 
 ---

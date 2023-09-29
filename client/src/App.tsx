@@ -21,35 +21,32 @@ import SellCoin from './components/template/sell-coin/SellCoin'
 import MontoInput from './components/molecule/BuyCard/MontoInput'
 import BuyPaymentMethod from './components/molecule/BuyCard/BuyPaymentMethod/BuyPaymentMethod'
 import BuyCoin from './components/template/buy-coin/BuyCoin'
-import { FavoriteCoinProvider } from './context/FavoriteCoinContext'
 
 function App() {
   return (
     <HashRouter>
       <AuthProvider>
         <ApiProvider>
-          <FavoriteCoinProvider>
-            <Header />
-            <Routes>
-              <Route path="/" element={ <Login /> } />
-              <Route path="/login" element={ <LoginView /> } />
-              <Route path="/sell" element={ <Sales /> } />
-              <Route path="/sell/screen" element={ <SalesCard /> } />
-              <Route path="/buy" element={ <Buy /> } />
-              <Route path="/buy/screen" element={ <MontoInput /> } />
-              <Route path="/buypaymentmethod" element={ <BuyPaymentMethod /> } />
-              <Route path="paymentmethod" element={ <PaymentMethod /> } />
-              <Route path="sell-coin" element={ <SellCoin /> } />
-              <Route path="/deposit" element={ <Deposit /> } />
-              <Route path="/market" element={ <Market /> } />
-              <Route path="/wallets" element={ <Wallets /> } />
-              <Route path="/register" element={ <Register /> } />
-              <Route path="/agregar-tarjeta" element={ <AgregarTarjeta /> } />
-              <Route path="/buy-coin" element={ <BuyCoin /> } />
-              <Route path="/register/continue" element={ <CreatePersonalAccount /> } />
-              <Route path="*" element={ <NotFound /> } />
-            </Routes>
-          </FavoriteCoinProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={ <Login /> } />
+            <Route path="/login" element={ <LoginView /> } />
+            <Route path="/sell" element={ <Sales /> } />
+            <Route path="/sell/screen" element={ <SalesCard /> } />
+            <Route path="/buy" element={ <Buy /> } />
+            <Route path="/buy/screen" element={ <MontoInput /> } />
+            <Route path="/buypaymentmethod" element={ <BuyPaymentMethod /> } />
+            <Route path="paymentmethod" element={ <PaymentMethod /> } />
+            <Route path="sell-coin" element={ <SellCoin /> } />
+            <Route path="/deposit" element={ <Deposit /> } />
+            <Route path="/market" element={ <Market /> } />
+            <Route path="/wallets" element={ <Wallets /> } />
+            <Route path="/register" element={ <Register /> } />
+            <Route path="/agregar-tarjeta" element={ <AgregarTarjeta /> } />
+            <Route path="/buy-coin" element={ <BuyCoin /> } />
+            <Route path="/register/continue" element={ <CreatePersonalAccount /> } />
+            <Route path="*" element={ <NotFound /> } />
+          </Routes>
         </ApiProvider>
         <Footer />
       </AuthProvider>

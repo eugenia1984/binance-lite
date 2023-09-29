@@ -228,9 +228,20 @@ Creamos un **MVP** y dividimos las tareas en **sprints** (con duración de una s
 
 - Se finalizan las paginas de compra y venta
 
-- Se ajustan los datos del suaurio para mostrarlos una vvez logueado
+- Se ajustan los datos del usuaurio para mostrarlos una vez logueado
       
 - Se realiza la página de billetera
+
+---
+
+### <img width="30" height="30" src="https://img.icons8.com/external-flaticons-flat-flat-icons/30/external-sprint-project-management-flaticons-flat-flat-icons.png" alt="external-sprint-project-management-flaticons-flat-flat-icons"/>  SPRINT 5 - Funcionalidades
+
+- Se hicieron varios ajustes en el layout y ajuste en el responsive.
+
+- Se completa la funcionalidad de favoritos, para poder agregar o eliminar las cryptomonedas de la Lista de Seguimiento.
+
+- Se guardan algunos datos en el localStorage para que siempre esten visibles y no se borren si se actualiza la página.
+
 
 ---
 ---

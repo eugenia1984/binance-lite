@@ -59,7 +59,7 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 
 
-<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/e503792e-4279-4ba7-8110-a4d552fc2ea0" height="320"  alt="lista de favoritos" style="margin-right: 80px;"/>
+<img src="https://github.com/eugenia1984/binance-lite/assets/72580574/e503792e-4279-4ba7-8110-a4d552fc2ea0" width="320"  alt="lista de favoritos" style="margin-right: 80px;"/>
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/5f3c0787-ed76-4127-8702-08fb0705f958" height="320"  alt="agregar a favoritos" style="margin-right: 80px;"/>
 

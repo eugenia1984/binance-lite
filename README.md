@@ -4,7 +4,17 @@ Realizaremos un rediseño de Binance Lite basado en los principios de simplifica
 
 Entendemos que el mundo del trading puede resultar complicado y abrumador para aquellos que recién comienzan, por lo que queremos lograr una reversión en la que se sientan cómodos, centrando su atención en los conceptos básicos y las operaciones esenciales.
 
-Algunas vistas:
+---
+
+## <img width="30" height="30" src="https://img.icons8.com/cotton/30/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY
+
+- Front: [https://binance-l.netlify.app/](https://binance-l.netlify.app/)
+
+- Back: [https://binance-production.up.railway.app/api/v1/docs#/](https://binance-production.up.railway.app/api/v1/docs#/) ó [https://binance-nocountry.zeabur.app/api/v1/docs/#/](https://binance-nocountry.zeabur.app/api/v1/docs/#/)
+
+--- 
+
+## Algunas vistas:
 
 ## Pantalla inicial: iniciar sesión o registro
 
@@ -90,15 +100,6 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 <img src="https://github.com/eugenia1984/binance-lite/assets/72580574/6a33e734-9891-47a1-92ef-824a288af530" height="420"  alt="pantalla de cartera" style="margin-right: 80px;"/>
 
-
-
----
-
-## <img width="30" height="30" src="https://img.icons8.com/cotton/30/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY
-
-- Front: [https://binance-l.netlify.app/](https://binance-l.netlify.app/)
-
-- Back: [https://binance-production.up.railway.app/api/v1/docs#/](https://binance-production.up.railway.app/api/v1/docs#/) ó [https://binance-nocountry.zeabur.app/api/v1/docs/#/](https://binance-nocountry.zeabur.app/api/v1/docs/#/)
 
 ---
 

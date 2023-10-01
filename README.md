@@ -1,6 +1,6 @@
 # <img width="30" height="30" src="https://img.icons8.com/dusk/30/binance.png" alt="binance"/> Seleccionado 10 - Equipo 03 - Nestjs - React - TypeScript (Binance Lite)
 
-Realizaremos un rediseño de Binance Lite basado en los principios de simplificación de “The laws of simplicity” de John Maeda, apuntado a crear una interfaz más amigable para los principiantes. 
+Participando en la emulación de **No Country**, realizamos un rediseño de Binance Lite basado en los principios de simplificación de “The laws of simplicity” de John Maeda, apuntado a crear una interfaz más amigable para los principiantes. 
 
 Entendemos que el mundo del trading puede resultar complicado y abrumador para aquellos que recién comienzan, por lo que queremos lograr una reversión en la que se sientan cómodos, centrando su atención en los conceptos básicos y las operaciones esenciales.
 

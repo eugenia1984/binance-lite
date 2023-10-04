@@ -135,7 +135,7 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 
 | Dependencias |
 | ------------ |
-| [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-dom](https://www.npmjs.com/package/react-dom) - [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-router-dom](https://www.npmjs.com/package/react-router-dom) - [<img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> firebase](https://firebase.google.com/) - [swiperjs](https://swiperjs.com/)  - [axios](https://axios-http.com/)  |
+| [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-dom](https://www.npmjs.com/package/react-dom) - [<img width="20" height="20" src="https://img.icons8.com/cute-clipart/20/react-native.png" alt="react"/> react-router-dom](https://www.npmjs.com/package/react-router-dom) - [<img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> firebase](https://firebase.google.com/) - [swiperjs](https://swiperjs.com/)  - [axios](https://axios-http.com/) - react-hot-toast - react-router-dom |
 
 | BackEnd |
 | ------- |

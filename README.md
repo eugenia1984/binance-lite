@@ -122,6 +122,9 @@ Una vez que se inicia sesión se ingresa a la pantalla de **mercado**, donde...
 |  [Paulo Crosetti](https://www.linkedin.com/in/paulo-crosetti) |
 |  [Maria Belen Fernandez Morales](https://www.linkedin.com/in/belen-fernandez-morales) |
 
+| PM |
+| -- |
+| [Frida Azul Varela Lucius](https://www.linkedin.com/in/fridavlucius/) |
 
 ---
 ---

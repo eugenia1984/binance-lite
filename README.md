@@ -28,15 +28,11 @@ Entendemos que el mundo del trading puede resultar complicado y abrumador para a
 
 
 
+| <img width="20" height="20" src="https://img.icons8.com/dotty/20/web.png" alt="web"/> UX/UI | PM |
+| --- | -- |
+|  [Paulo Crosetti](https://www.linkedin.com/in/paulo-crosetti) |  [Frida Azul Varela Lucius](https://www.linkedin.com/in/fridavlucius/) |
+|  [Maria Belen Fernandez Morales](https://www.linkedin.com/in/belen-fernandez-morales) | - |
 
-| <img width="20" height="20" src="https://img.icons8.com/dotty/20/web.png" alt="web"/> UX/UI |
-| --- |
-|  [Paulo Crosetti](https://www.linkedin.com/in/paulo-crosetti) |
-|  [Maria Belen Fernandez Morales](https://www.linkedin.com/in/belen-fernandez-morales) |
-
-| PM |
-| -- |
-| [Frida Azul Varela Lucius](https://www.linkedin.com/in/fridavlucius/) |
 
 ---
 ---
